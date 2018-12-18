@@ -140,17 +140,25 @@ with open("new.txt", "w", encoding='utf-8') as f:
 
 ##### 텍스트 직접 bash 에서 읽기
 
-cat 텍스트파일
-
-
-
-
+> cat 텍스트파일
 
 ##### 탭으로 구분
 
-\t
+> \t
 
 ##### 한줄넘기기
 
-\n
+> \n
+
+##### 텍스트 내용 리턴하기
+
+> readline() : 한줄로 읽어서 리턴
+>
+> readlines() : 파일 전체를 읽어 list 형태로 리턴
+
+##### 텍스트 좌우 스트립해서 리턴하기
+
+> strip() 활용
+>
+> line.strip()
 

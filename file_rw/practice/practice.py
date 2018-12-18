@@ -11,5 +11,4 @@
 with open("count.txt", "w", encoding = "utf-8") as d:
     for i in range(1, 5):
         data = f'{i}번째 단어입니다.\t'
-        d.writelines(data)
-
+        d.write(data)
