@@ -1,0 +1,49 @@
+* {
+    background: lightcyan;
+    font-family: 'Nanum Pen Script', cursive;
+    font-size: 110%;
+}
+/* h1 {
+     color: blueviolet;
+     background: lightcoral;
+}
+p {
+    color: darkblue;
+    background-image: none;
+}
+.p_tag {
+    background: lightgreen;
+}
+
+.text-center {
+    text-align: center;
+}
+.text-large {
+    font-size: 50px;
+}
+.text-blue {
+    color: blue;
+}
+.text-red {
+    color: red;
+}
+
+div > p {
+    color: green;
+
+} */
+
+p~span {
+    background: hotpink;
+}
+
+/* }
+#lunch {
+    color: darkblue;
+
+}
+#dinner {
+    color: darkred:
+
+} */
+

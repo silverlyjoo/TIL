@@ -42,13 +42,13 @@ search = soup.select("#PM_ID_ct > div.header > div.section_navbar > div.area_hot
 
 
 # i = search.select_one(search)
-# print(search)
+print(search)
 
 
-#  li:nth-child(range(1)
 
-for i in search:
-    i.select_one("")
-    print(i.text)
+
+# for i in search:
+#     i.select_one("")
+#     print(i.text)
 
 # print()
