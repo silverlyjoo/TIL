@@ -1,6 +1,10 @@
 # Python 101 
+INDEX
+[01. Python Intro](https://github.com/djpy2/python101/blob/master/Slide_01_Python_intro.ipynb)
 
-written by 7akikim
+[02_0 Control Flow](https://github.com/djpy2/python101/blob/master/Slide_02_0_Control_of_flow.ipynb)
+
+[02_1 Control Flow_Function](https://github.com/djpy2/python101/blob/master/Slide_02_1_Control_of_flow_function.ipynb)
 
 ## 개요
 
@@ -58,6 +62,17 @@ python version 3.6.7을 기준으로 작성되었음.
   pip install --upgrade pip
   source ~/.bashrc
   ```
+## Jupyter notebook 환경설정
+본 주피터 노트북은 슬라이드 쇼로 활용할 수 있도록 구성하였음. 
+### 0) Jupyter notebook 설치
+```powershell
+$ pip install jupyter
+```
+
+### 1) Jupyter notebook 실행
+```powershell
+$ jupyter notebook
+```
 
 ## License
 
