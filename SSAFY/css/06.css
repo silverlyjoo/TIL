@@ -1,0 +1,51 @@
+body {
+    height: 2000px;
+}
+
+.square {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: darkgrey;
+}
+
+.relative-box {
+    position: relative;
+    background-color: navy;
+    top: 10px;
+    left: 10px;
+}
+
+.absolute-box {
+    position: absolute;
+    background-color: chocolate;
+    top: 30px;
+    left: 30px;
+}
+
+.fixed {
+    position: fixed;
+    background-color: coral;
+    bottom: 0px;
+    left: 0px;
+    height: 20px;
+}
+
+.z-index-1 {
+    background-color: skyblue;
+    top: 300px;
+    left: 300px;
+    z-index: 3;
+}
+.z-index-2 {
+    background-color: silver;
+    top: 350px;
+    left: 350px;
+    z-index: 3;
+}
+.z-index-3 {
+    background-color: pink;
+    top: 400px;
+    left: 400px;
+    z-index: 3;
+}

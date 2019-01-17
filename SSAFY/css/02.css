@@ -1,0 +1,27 @@
+* {
+    color: red;
+} /* 전체 셀렉터는 우선순위가 낮다 */ 
+
+h1 {
+    color: blue;
+}
+
+.pink {
+    color: pink;
+}
+
+#green {
+    color: green;
+}  /* Id 와 Class 중의 우선순위는 Id값이 높다. */
+
+h2 {
+    color: silver;
+}
+
+.blue {
+    color: blue;
+}
+
+.bold {
+    font-weight: bold;
+}

@@ -38,8 +38,8 @@
 
 ```html
 <p>
-    <form action="#">
-        ID : <input type="text" name="login"><br>
+    <form action="/login">
+        ID : <input type="text"><br>
         PWD : <input type="password">
         <input type="submit" value="로그인">
 	</form>

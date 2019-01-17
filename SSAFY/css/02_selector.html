@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="02.css">
+</head>
+<body>
+    <!-- 셀렉터 우선순위 id > class > tag > all -->
+    <p>빨간색</p>
+    <h1>Tag selector</h1>
+    <h2 class="pink">Class selector</h2>
+    <h3 id="green">Id selector</h3>
+    <h3 id="green" class="pink">Id & Class</h3>
+    <h2 class="pink">Class & Tag</h3>
+
+    <hr>
+
+    <p>
+        <span class="blue">파란색</span>과 <span id="green">초록색</span>
+    </p>
+
+    <!-- span 태그와 div 태그는 모두 의미는 없지만 '마크업'을 해야 css를 적용
+    시킬 수 있기 때문에 사용한다. 컴퓨터니까 특정한 곳을 지정 해 주어야 
+    하고, 따라서 선택자가 필요하고, 선택자를 잡기 위해서는
+    마크업이 필요하다. -->
+    
+    <p class="bold blue pink">선택자 볼드체</p>
+    
+    <!-- 아래처럼 pink 가 마지막에 써졌지만
+    css상으로 blue가 마지막에 선언되었기 때문에 파란색이 적용된다. -->
+
+
+    <p><strong>스트롱 볼드체</strong></p>
+    <p><b>볼드체</b></p>
+    
+    <!-- 달라지는 점이 무엇일까 라고 했을때 TAG를 통해 여기는 강조 혹은 볼드체라는것을 명시.
+    따라서 단순 볼드 체를 하기 위해서 strong 태그를 남발하는 경우에는 브라우저가 모든 볼드체를 강조하게 된다. -->
+    
+</body>
+</html>

@@ -1,0 +1,70 @@
+body {
+    height: 3000px;
+}
+
+.square {
+    width: 100px;
+    height: 100px;
+    background-color: darkgrey;
+}
+
+.padding-10 {
+    padding: 10px;
+}
+
+.border-box {
+    box-sizing: border-box;
+}
+
+.margin-50 {
+    margin: 50px 50px 50px 50px;
+
+    /* 1개 all, 2개 위아래/좌우,
+     3개 위/좌우/아래 4개 위/오른쪽/아래/왼쪽
+     margin: auto 는 오른쪽왼쪽 반반 나눔 
+     margin-left: auto 오른쪽 정렬
+     (모든 마진을 왼쪽으로)
+     margin-right: auto 왼쪽 정렬*/
+}
+.margin-top-100 {
+    margin-top: 100px;
+}
+
+.margin-3 {
+    margin: 10px 20px 30px;
+}
+
+.border {
+    border: 10px;
+    border-style: dashed;
+    border-bottom-style: double;
+    border-top-style: solid;
+    border-left-style: inset;
+    border-bottom-color: aqua;
+}
+
+.circle {
+    width: 200px;
+    height: 200px;
+    background-color: hotpink;
+    border-radius: 50%;
+
+}
+
+.ball {
+    width: 200px;
+    height: 200px;
+    background-color: rgb(156, 94, 35);
+    border-top-left-radius: 25%;
+    border-top-right-radius: 75%;
+    border-bottom-left-radius: 75%;
+    border-bottom-right-radius: 25%;
+}
+
+.ball2 {
+    width: 200px;
+    height: 200px;
+    background-color: rgb(156, 94, 35);
+    border-radius: 25% 65%;
+    opacity: 0.5;
+}

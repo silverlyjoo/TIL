@@ -1,0 +1,53 @@
+body {
+    height: 3000px
+}
+
+p, h3 {
+    color: darkgray;
+}
+
+.black_bg, .white {
+    color: white;
+    background-color: black;
+}
+
+div {
+    width: 200px;
+    height: 100px;
+    border: 1px solid black;
+}
+
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
+
+/* 인접, 형제선택자(완전히붙은경우)
+h1에 붙은 p가 있을 경우 p를 바꿈 */
+
+h1 + p {
+    color: darkgreen;
+}
+
+.red + .blue + div {
+    background-color: purple;
+}
+
+ol > li {
+    color: coral;
+}
+
+ol#chocolate > li {
+    color: chocolate;
+}
+
+ul li {
+    color:lime;
+}
+
+ul li:nth-of-type(2) {
+    color: black;
+}
