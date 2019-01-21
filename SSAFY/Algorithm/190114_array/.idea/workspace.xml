@@ -2,31 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fc753e10-5f8e-4ecb-b385-d85ac6c51e1a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/algorithm_start.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baby_jin_greedy.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bubblesort.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbs.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbs_input.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/counting_sort.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/e_bus.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/e_bus_input.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/min_max.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/min_max_input.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/narasi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/narasi_input.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/num_card.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/num_card_input.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/permutation.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/range_sum.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/range_sum2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/range_sum_input.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/view.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/view_input.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/e_bus.py" beforeDir="false" afterPath="$PROJECT_DIR$/e_bus.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/min_max.py" beforeDir="false" afterPath="$PROJECT_DIR$/min_max.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,10 +14,37 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/min_max.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="104">
+              <caret line="9" column="23" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../algorithm_in/day2/숫자카드.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="147">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <caret line="7" column="13" lean-forward="true" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/num_card.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/range_sum2.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="16" column="15" lean-forward="true" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -49,16 +53,34 @@
         <entry file="file://$PROJECT_DIR$/../algorithm_in/day2/구간합.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="462">
-              <caret line="22" column="50" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
+              <caret line="22" column="50" lean-forward="true" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/e_bus.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1176">
+              <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../algorithm_in/day2/전기버스.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="6" column="9" lean-forward="true" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../algorithm_in/day2/전기버스.py">
+        <entry file="file://$PROJECT_DIR$/narasi.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+            <state relative-caret-position="105">
+              <caret line="5" column="44" lean-forward="true" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -122,7 +144,17 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="ProjectPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="algorithm_start" type="b2602c69:ProjectViewProjectNode" />
+              <item name="algorithm_start" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -273,7 +305,7 @@
     <frame x="96" y="24" width="1718" height="912" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.100595236" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.100595236" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -440,7 +472,7 @@
     <entry file="file://$PROJECT_DIR$/../algorithm_in/day2/숫자카드.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <caret line="7" column="13" lean-forward="true" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -468,7 +500,7 @@
     <entry file="file://$PROJECT_DIR$/../algorithm_in/day2/구간합.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
-          <caret line="22" column="50" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
+          <caret line="22" column="50" lean-forward="true" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
         </state>
       </provider>
     </entry>
@@ -479,17 +511,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../algorithm_in/day2/전기버스.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="9" lean-forward="true" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/narasi.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="5" column="44" lean-forward="true" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../algorithm_in/day2/전기버스.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
         </state>
       </provider>
     </entry>
