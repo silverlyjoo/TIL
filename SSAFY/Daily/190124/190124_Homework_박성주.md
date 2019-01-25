@@ -8,7 +8,7 @@
    폭이나 배치를 변경하여 가독성을 높이도록 하는 웹페이지 접근 기법이다. 여기서 (a)에 들어갈 말을 작
    성하시오.
 
-   ​	`디스플레이`
+   ​	`디바이스`
 
 
 
@@ -17,7 +17,6 @@
 
   ```html
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   ```
 
   
