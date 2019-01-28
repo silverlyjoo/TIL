@@ -1,6 +1,7 @@
 
 import sys
 sys.stdin = open("coloring_input.txt")
+from pprint import pprint
 
 
 T = int(input())
@@ -15,6 +16,7 @@ for case in range(T):
                 template[rcolor][ccolor] += color
                 if template[rcolor][ccolor] == 3:
                     count += 1
+    pprint(template)
     print(f'#{case+1} {count}')
 
 
