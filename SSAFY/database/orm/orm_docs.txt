@@ -1,0 +1,38 @@
+insert into table
+INSERT INTO users (username, email) VALUES ('joo', 'myemail@email.com');
+from app import *
+user = User(username='joo', email='myemail@email.com')
+db.session.add(user)
+db.session.commit()
+
+read
+SELECT * FROM users;
+users = User.query.all()
+
+SELECT * FROM users WHERE username='joo';
+users = User.query.filter_by(username='joo').all()
+
+SELECT * FROM users WHERE username='joo' LIMIT 1;
+users = User.query.filter_by(username='joo').first()
+
+
+None 이 뜸
+miss = User.query.filter_by(username='ssafy').first()
+
+Get one by id / PK 만 GET으로 가져올 수 있음.
+SELECT * FROM users WHERE id=1;
+user = User.query.get(1)
+
+LIKE
+SELECT * FROM users LIKE 
+users = User.query.filter(User.email.like('%email%')).all()
+
+users = User.query.limit(1).offset(2).all()
+
+UPDATE
+user = User.query.get(1)
+
+DELETE
+user = User.query.get(1)
+db.session.delete(user)
+db.session.commit()

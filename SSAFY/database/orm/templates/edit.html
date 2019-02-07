@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block body %}
+    <h1>여기는 수정페이지입니다.</h1>
+    
+    <form action="/users/update/{{ user.id }}">
+        <input type="text" name="username" value="{{ user.username }}"/>
+        <input type="text" name="email" value="{{ user.email }}"/>
+        <input type="submit" value="Submit"/>
+    </form>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %} Index {% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="style.css" type="text/css" />
+{% endblock %}
+
+{% block body %}
+    <form action="/users/create">
+        <input type="text" name="username"/>
+        <input type="email" name="email"/>
+        <input type="submit" value="Submit"/>
+    </form>
+    
+    <ul>
+        {% for user in users %}
+            <li>{{ user.username }} : {{ user.email }}
+                <a href="/users/delete/{{ user.id }}">[DELETE]</a>
+                <a href="/users/edit/{{ user.id }}">[EDIT]</a>
+            </li>
+        {% endfor %}
+    </ul>
+    
+    
+    
+    
+    
+{% endblock %}
