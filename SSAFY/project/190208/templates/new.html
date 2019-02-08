@@ -1,0 +1,22 @@
+{% extends "base.html" %} {% block title %}New{% endblock %} {% block head %} {{ super() }} {% endblock %} {% block body %}
+<div class="container">
+    <h1>영화 정보 생성</h1>
+    <div class="row">
+        <form action="/movies/create/">
+            <div>영화제목 :<input type="text" name="title" required/></div>
+            <div>영화제목(영문) : <input type="text" name="title_en" required/></div>
+            <div>누적관객수 : <input type="number" name="audience" required/></div>
+            <div>개봉일 : <input type="date" name="open_date" required/></div>
+            <div>장르 : <input type="text" name="genre" required/></div>
+            <div>관람등급 : <input type="text" name="watch_grade" required/></div>
+            <div>평점 : <input type="number" step="0.01" min="0" max="10" name="score" required/></div>
+            <div>포스터 이미지 URL : <input type="text" name="poster_url" required/></div>
+            <div>영화소개 : <textarea name="description" required></textarea></div>
+            <div><input type="submit" value="Submit"/></div>
+        </form>
+
+
+    </div>
+</div>
+
+{% endblock %}

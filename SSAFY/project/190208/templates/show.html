@@ -1,0 +1,30 @@
+{% extends "base.html" %} {% block title %}Show{% endblock %} {% block head %} {{ super() }} {% endblock %} {% block body %}
+<div class="container">
+    <h1 class="text-secondary text-center">영화 상세 정보</h1>
+    <div class="row justify-content-center">
+        <div>
+            <h2 class="text-center">{{ movie.title }}</h2>
+            <img src="{{ movie.poster_url }}" style="max-width:500px; height:auto;" class="img-fluid" alt="Responsive image">
+        </div>
+        <ul class="list-group mt-5 text-center">
+            <li class="list-group-item">영문 제목 : {{ movie.title_en }}</li>
+            <li class="list-group-item">누적 관객 수 : {{ movie.audience }}</li>
+            <li class="list-group-item">개봉일 : {{ movie.open_date }}</li>
+            <li class="list-group-item">장르 : {{ movie.genre }}</li>
+            <li class="list-group-item">관람 등급 : {{ movie.watch_grade }}</li>
+            <li class="list-group-item">평점 : {{ movie.score }}</li>
+            <li class="list-group-item">포스터 url : <a href="{{ movie.poster_url }}" target="_blank">{{ movie.poster_url }}</a></li>
+            <li class="list-group-item">영화 소개 : {{ movie.description }}</li>
+        </ul>
+    </div>
+    <div class="row d-flex justify-content-center my-3">
+        <div class="col col-6 d-flex justify-content-around">
+            <h4><a href="/movies/">영화 목록</a></h4>
+            <h4><a href="/movies/{{ movie.id }}/edit/">영화 정보 수정</a></h4>
+            <h4><a href="/movies/{{ movie.id }}/delete/">영화 정보 삭제</a></h4>
+        </div>
+    </div>
+
+
+</div>
+{% endblock %}
