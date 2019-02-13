@@ -1,0 +1,13 @@
+{% extends 'base.html' %} {% block title %}
+<p>ping</p>
+{% endblock %} {% block body %}
+<div class="row justify-content-center text-secondary">
+    <form action="/home/pong">
+        <div class="form-group">
+            <label for="ping">ping</label>
+            <input type="text" class="form-control" name='data'>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock %}
