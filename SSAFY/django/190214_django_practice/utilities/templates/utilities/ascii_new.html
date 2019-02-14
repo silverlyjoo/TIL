@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% block title %} utilities index {% endblock %} {% block body %}
+<h1>ascii_new</h1>
+<hr>
+<form action="/utilities/ascii_make/">
+    <div class="form-group">
+        <input type="text" class="form-control" name="text" placeholder="input text">
+    </div>
+    <select class="form-control" name="font">
+        {% for i in fonts %}
+        <option>{{ i }}</option>
+        {% endfor %}
+    </select>
+    <hr>
+    <button type="submit" class="btn btn-secondary">Submit</button>
+</form>
+
+{% endblock %}

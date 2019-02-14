@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}
+<p>new</p>
+{% endblock %}
+
+
+{% block body %}
+<div class="row justify-content-center text-secondary">
+    <form action="/home/create/" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="id">id</label>
+            <input type="text" class="form-control" name='id'>
+            <label for="pwd">password</label>
+            <input type="password" class="form-control" name='pwd'>
+        </div>
+        <button type="submit" class="btn btn-secondary">Submit</button>
+    </form>
+</div>
+{% endblock %}

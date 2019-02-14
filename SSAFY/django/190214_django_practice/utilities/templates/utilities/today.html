@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %} utilities index
+{% endblock %}
+
+{% block body %}
+    <h1>Today</h1>
+    <hr>
+    <h3>오늘은 {{ today }}</h3>
+    <h3>날씨 : {{ weather }}</h3>
+    <h3>평균온도 : {{ temp }}</h3>
+    <h3>최저/최고온도 : {{ max_temp }}/{{ min_temp }}</h3>
+    
+{% endblock %}

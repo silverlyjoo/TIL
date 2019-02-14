@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% block title %}
+    DTL practice
+{% endblock %}
+
+{% block body %}
+    <h3>1. 반복문</h3>
+    {% for menu in my_list %}
+        <p>{{ menu }}</p>
+    {% endfor %}
+    <hr>
+    {% for menu in my_list %}
+        {% if forloop.first %}
+            <p>짜장면 + 고춧가루</p>
+        {% else %}
+            <p>{{ menu }}</p>
+        {% endif %}
+    {% endfor %}
+    <hr>
+    {% for menu in my_list %}
+        {% if forloop.last %}
+            <p>짜장면 + 고춧가루</p>
+        {% else %}
+            <p>{{ menu }}</p>
+        {% endif %}
+    {% endfor %}
+    <hr>
+    {% for menu in my_list %}
+        <p>{{ forloop.counter }}.{{ menu }}</p>
+    {% endfor %}
+    <hr>
+    {% for user in empty_list %}
+        <p>{{ user }}</p>
+    {% empty %}
+        <p>지금 가입한 회원이 없습니다.</p>
+    {% endfor %}
+    <hr>
+    <br>
+    <h3>2. 조건문</h3>
+    
+    {% if '진라면' in my_list %}
+        <p> 신라면엔 계란이지 !!!</p>
+    {% endif %}
+    <hr>
+    <br>
+    <h3>3. length filter 활용</h3>
+    {% for message in messages %}
+        {% if message|length > 5 %}
+            <p> 글씨가 너무 길어요. {{ message|length }}</p>
+        {% else %}
+            <p>{{ message }}, {{ message|length }}</p>
+        {% endif %}
+    {% endfor %}
+    <hr>
+    <br>
+    <h3>4. lorem ipsum</h3>
+    {% lorem %}
+    <hr>
+    {% lorem 3 w %}
+    <hr>
+    {% lorem 4 w random %}
+    <hr>
+    {% lorem 2 p %}
+    <hr>
+    <br>
+    <h3>5. 글자수 제한 </h3>
+    <p>{{ my_sentence|truncatewords:3 }}</p>
+    <p>{{ my_sentence|truncatechars:4 }}</p> <!--blank + ... 때문에 4칸을 먹고 시작-->
+    <p>{{ my_sentence|truncatechars:10 }}</p>
+    <hr>
+    <br>
+    <h3>6. 글자 관련 filter</h3>
+    <p>{{ 'abc'|length }}</p>
+    <p>{{ 'ABC'|lower }}</p>
+    <p>{{ my_sentence|title }}</p>
+    <p>{{ 'abc def'|capfirst }}</p>
+    <p>{{ my_list|random }}</p>
+    <hr>
+    <br>
+    <h3>7. 연산</h3>
+    {{ 4| add:6}}
+    <hr>
+    <br>
+    <h3>8. 날짜 표현</h3>
+    <p>{% now "DATETIME_FORMAT" %}</p>
+    <p>{% now "SHORT_DATETIME_FORMAT" %}</p>
+    <p>{% now "DATE_FORMAT" %}</p>
+    <p>{% now "SHORT_DATE_FORMAT" %}</p>
+    <p>{% now "TIME_FORMAT" %}</p>
+    <hr>
+    <p>{% now "Y년 m월 d일 (D) h:i" %}</p>
+    <hr>
+    {%now "Y" as current_year %}
+    <p>Copyright {{ current_year }}</p>
+    <p>{{ datetimenow }}</p>
+    <p>{{ datetimenow|date:"SHORT_DATE_FORMAT"}}</p>
+    <hr>
+    <br>
+    <h3>9. 기타</h3>
+    <p>{{ 'google.com'|urlize}}</p>
+{% endblock %}
+    

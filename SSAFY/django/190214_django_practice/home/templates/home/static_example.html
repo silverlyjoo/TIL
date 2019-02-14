@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}STATIC{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'home/stylesheets/style.css' %}" type="text/css" />
+{% endblock %}
+
+{% block body %}
+    <img src="{% static 'home/images/choi2.png' %}" alt='image'></img>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% block title %}
+<p>dinner</p>
+{% endblock %} {% block body %}
+<div class="row justify-content-center">
+    <ul class="list-group mt-3">
+        {% for menu in menus %}
+        <li class="list-group-item">{{ menu }}</li>
+        {% endfor %}
+    </ul>
+
+</div>
+<hr> {% if pick == '연어회' %}
+<p class="row justify-content-center"> 싱싱한 연어회가 만원!! </p>
+{% else %}
+<p class="row justify-content-center"> {{ pick }}</p>
+{% endif %} {% endblock %}

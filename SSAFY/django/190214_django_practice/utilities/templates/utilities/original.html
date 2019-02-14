@@ -1,0 +1,12 @@
+{% extends 'base.html' %} {% block title %} utilities index {% endblock %} {% block body %}
+<h1>Original</h1>
+<hr>
+<form action="/utilities/translated/" method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="번역해드립니다" name="originaltext">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{% endblock %}
