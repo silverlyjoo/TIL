@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+{{ block.super }}
+
+{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'detail/index.css' %}" type="text/css" />
+{% endblock %}
+
+{% block title %}
+Index
+{% endblock %}
+
+{% block body %}
+<header class="d-flex justify-content-center align-items-center" id="Header">
+    <h1>detail/{{ notfound }}는 없는 페이지입니다</h1>
+</header>
+
+<footer class="fixed-bottom d-flex align-items-center p-3 justify-content-between">
+    <p class="m-0">Silverlyjoo</p>
+    <a href="#tops"><i class="fas fa-arrow-circle-up fa-lg text-light"></i></a>
+</footer>
+{% endblock %}

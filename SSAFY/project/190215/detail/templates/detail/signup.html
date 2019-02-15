@@ -1,0 +1,48 @@
+{% extends 'base.html' %} {% load static %} {% block head %} {{ block.super }} {% endblock %} {% block css %}
+<link rel="stylesheet" href="{% static 'detail/index.css' %}" type="text/css" /> {% endblock %} {% block title %} Signup {% endblock %} {% block body %}
+
+<div class="container mt-3">
+    <div class="row">
+        <div class="d-flex col col-4 align-items-center">
+            <img src="{% static 'detail/images/mumin2.jpg' %}" class="img-fluid">
+        </div>
+        <div class="col col-1"></div>
+        <div class="col col-7">
+            <h2 class="text-center"> Sign Up </h2>
+            <form class="row">
+                <div class="form-group col col-12">
+                    <label for="title">Email address</label>
+                    <input type="email" class="form-control" placeholder="Enter email" name="email">
+                </div>
+                <div class="form-group col col-12">
+                    <label for="title">Name</label>
+                    <input type="text" class="form-control" placeholder="Enter name" name="name">
+                </div>
+                <div class="form-group col col-12">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" placeholder="Password" name='password'>
+                </div>
+                <div class="form-group col col-12">
+                    <label for="passwordc">Password Confirm</label>
+                    <input type="password" class="form-control" placeholder="Password" name='passwordc'>
+                </div>
+                <button type="submit" class="btn btn-primary ml-3 mt-2">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<footer class="fixed-bottom d-flex align-items-center p-3 justify-content-between">
+    <p class="m-0">Silverlyjoo</p>
+    <a href="#tops"><i class="fas fa-arrow-circle-up fa-lg text-light"></i></a>
+</footer>
+{% endblock %}

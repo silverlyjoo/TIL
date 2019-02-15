@@ -1,0 +1,53 @@
+{% extends 'base.html' %} {% load static %} {% block head %} {{ block.super }} {% endblock %} {% block css %}
+<link rel="stylesheet" href="{% static 'detail/index.css' %}" type="text/css" /> {% endblock %} {% block title %} Mypage {% endblock %} {% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col col-4">
+            <div class="card " style="width: 14rem;" id="my_info">
+                <img src="{% static 'detail/images/mumin3.jpg' %}" class="card-img-top rounded-circle" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Silverlyjoo</h5>
+                    <p class="card-text text-secondary">silverlyjoo@gmail.com</p>
+                    <p class="card-text">Hello! Nice to meet you</p>
+                    <a href="#">Logout</a>
+                </div>
+            </div>
+        </div>
+        <div class="col col-8">
+            <div class="card my-4" style="width: 100%;">
+                <img src="https://picsum.photos/400/200/?random" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">ssafy 대전2반</h5>
+                    <p class="card-text text-secondary">ssafy 대전 2반 너무 열심히 하는거같아</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+            <div class="card my-4" style="width: 100%;">
+                <img src="https://picsum.photos/400/200/?random" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">ssafy 강사님들</h5>
+                    <p class="card-text text-secondary">ssafy 강사님들 너무 잘가르치시는거같아</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+            <div class="card my-4" style="width: 100%;">
+                <img src="https://picsum.photos/400/200/?random" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">ssafy 매니저님들</h5>
+                    <p class="card-text text-secondary">ssafy 매니저님들 너무 열심히 도와주시는거같아</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <footer class="fixed-bottom d-flex align-items-center p-3 justify-content-between">
+        <p class="m-0">Silverlyjoo</p>
+        <a href="#tops"><i class="fas fa-arrow-circle-up fa-lg text-light"></i></a>
+    </footer>
+    {% endblock %}
