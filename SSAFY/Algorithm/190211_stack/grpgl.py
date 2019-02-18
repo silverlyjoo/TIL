@@ -6,13 +6,9 @@ def goto(S, G, L):
     global result
     for i in L[S]:
         if i == G:
-            result = 1
+            return 1
         else:
             goto(i, G, L)
-    if result == 1:
-        return 1
-    else:
-        return 0
 
 
 T = int(input())
