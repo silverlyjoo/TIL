@@ -40,6 +40,3 @@ for N in range(1, T+1):
                     stack = []
 
     print(f'#{N} {result}')
-
-
-
