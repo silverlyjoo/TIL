@@ -1,0 +1,33 @@
+{% extends 'boards/base.html' %} {% block body %}
+<h1 class="text-center mt-5">Board</h1>
+<!--<a href="/boards/new/" class="d-flex justify-content-end">글 작성하기</a>-->
+<hr>
+
+<ul class="list-group mb-2">
+    <li class="list-group-item row d-flex">
+        <p class="col col-2 my-1 text-center">ID</p>
+        <p class="col col-3 my-1 text-center">TITLE</p>
+        <p class="col col-4 my-1 text-center">작성시간</p>
+        <!--<p class="col col-3 my-1 text-center"></p>-->
+        <div class="col col-3 d-flex justify-content-center">
+        <a href="/boards/new/" class="text-center btn btn-primary">글 작성하기</a>
+        </div>
+    </li>
+</ul>
+<ul class="list-group">
+    {% for board in boards %}
+    <li class="list-group-item row d-flex">
+        <p class="col col-2 my-1 text-center">{{board.id}}</p>
+        <p class="col col-3 my-1 text-center">{{board.title}}</p>
+        <p class="col col-4 my-1 text-center">{{board.created_at|timesince}} 전 </p>
+        <div class="col col-3 d-flex justify-content-around">
+            <a href="/boards/{{ board.pk }}/" class="btn btn-secondary">자세히</a>
+            <a href="/boards/{{ board.pk }}/edit/" class="btn btn-warning">수정</a>
+            <a href="/boards/{{ board.pk }}/delete/" class="btn btn-danger" onclick="return confirm('지울거야?')">삭제</a>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+
+
+{% endblock %}

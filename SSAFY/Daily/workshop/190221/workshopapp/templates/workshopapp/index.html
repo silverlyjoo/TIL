@@ -1,0 +1,15 @@
+{% extends 'workshopapp/base.html' %}
+
+{% block body %}
+<h1>Hello Students!!</h1>
+<hr>
+{% for student in students %}
+
+<p>{{ student.name }} : {{ student.age }} 살, {{ student.birthday }} 생, {{ student.email }}</p>
+<a href="{{ student.pk }}/delete/">삭제</a>
+<a href="{{ student.pk }}/edit/">수정</a>
+<hr>
+{% endfor %}
+<a href="new/">새로만들기</a>
+
+{% endblock %}

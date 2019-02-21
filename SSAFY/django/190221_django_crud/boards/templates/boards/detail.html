@@ -1,0 +1,17 @@
+{% extends 'boards/base.html' %}
+
+{% block body %}
+
+<h1>DETAIL</h1>
+<h5>{{ board.id }} 번째 글</h5>
+<hr>
+<p>제목 : {{ board.title }}</p>
+<p>내용 : {{ board.content }}</p>
+<p>작성시간 : {{ board.created_at }}</p>
+<p>최종 수정 시간: {{ board.updated_at }}</p>
+<a href="/boards/" class="btn btn-secondary">뒤로</a>
+<a href="/boards/{{ board.pk }}/delete/" class="btn btn-danger" onclick="return confirm('지울거야?')">삭제</a>
+<a href="/boards/{{ board.pk }}/edit/" class="btn btn-warning">수정</a>
+
+
+{% endblock %}

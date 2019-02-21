@@ -1,0 +1,18 @@
+{% extends 'boards/base.html' %} {% block body %}
+<h1>New</h1>
+<hr>
+<form action='/boards/create/' method='POST'>
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="title">TITLE</label>
+        <input type="text" class="form-control" name="title" id="content" />
+        <br>
+        <label for="content">CONTENT</label>
+        <textarea name="content" class="form-control" id="content" cols="20" rows="5"></textarea>
+        <br>
+        <a href="/boards/" class="btn btn-secondary">뒤로</a>
+        <input type="submit" class='btn btn-primary' value="Submit" />
+    </div>
+</form>
+
+{% endblock %}

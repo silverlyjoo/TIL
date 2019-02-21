@@ -1,0 +1,21 @@
+{% extends 'boards/base.html' %} {% block body %}
+<h1>EDIT</h1>
+<!--<a href="/boards/">뒤로가기</a>-->
+<hr>
+<form action='/boards/{{ board.pk }}/update/' method='POST'>
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="title">TITLE</label>
+        <input type="text" class="form-control" name="title" id="content" value="{{ board.title }}"/>
+        <br>
+        <label for="content">CONTENT</label>
+        <textarea name="content" class="form-control" id="content" cols="20" rows="5">{{ board.content }}</textarea>
+        <br>
+        <a href="/boards/" class="btn btn-secondary">뒤로</a>
+        <input type="submit" class='btn btn-primary' value="Submit" />
+    </div>
+</form>
+
+
+
+{% endblock %}
