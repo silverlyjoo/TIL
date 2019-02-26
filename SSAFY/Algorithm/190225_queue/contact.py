@@ -7,16 +7,12 @@ def go(s):
     queue = [s]
     result = []
     while queue:
-        print(queue)
+        # print(queue)
         i = queue.pop(0)
-
         for j in R[i]:
             if not visited[j]:
-                visited[j] = 1
-                if j in start:
-                    queue.append(j)
-                else:
-                    result.append(j)
+                visited[j] = visited[i] + 1
+    return visited
 
 
 
@@ -33,7 +29,7 @@ for tc in range(1, 1+1):
     for i in range(l//2):
         R[start[i]].append(end[i])
 
-    print(R)
-    go(s)
-    # print(result)
+    # print(R)
+    # go(s)
+    print(go(s))
 
