@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e7b9ed69-b784-4849-b80f-27e194d1690e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/hrcg.py" beforeDir="false" afterPath="$PROJECT_DIR$/hrcg.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hrcg_input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/hrcg_input.txt" afterDir="false" />
-    </list>
+    <list default="true" id="e7b9ed69-b784-4849-b80f-27e194d1690e" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +23,7 @@
         <entry file="file://$PROJECT_DIR$/190226/pizza.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="608">
-              <caret line="32" column="39" lean-forward="true" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
+              <caret line="32" column="39" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -35,7 +32,7 @@
         <entry file="file://$PROJECT_DIR$/contact.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="247">
-              <caret line="13" column="30" lean-forward="true" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
+              <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -95,8 +92,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="121" />
-    <option name="width" value="1806" />
+    <option name="x" value="739" />
+    <option name="width" value="1188" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -263,9 +260,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="121" y="0" width="1806" height="1047" extended-state="0" />
+    <frame x="739" y="0" width="1188" height="1047" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12330317" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18956521" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -432,6 +429,7 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/190226/ndgl.py" />
     <entry file="file://$PROJECT_DIR$/190226/pizza_input.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -439,17 +437,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/190226/ndgl.py">
+    <entry file="file://$PROJECT_DIR$/contact.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/190226/ndgl2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="24" lean-forward="true" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+        <state relative-caret-position="247">
+          <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -460,17 +451,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/contact.py">
+    <entry file="file://$PROJECT_DIR$/190226/ndgl2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="30" lean-forward="true" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
+        <state relative-caret-position="190">
+          <caret line="10" column="24" lean-forward="true" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/190226/pizza.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="608">
-          <caret line="32" column="39" lean-forward="true" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
+          <caret line="32" column="39" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
         </state>
       </provider>
     </entry>
