@@ -11,6 +11,7 @@ def go(s):
         i = queue.pop(0)
         for j in R[i]:
             if not visited[j]:
+                queue.append(j)
                 visited[j] = visited[i] + 1
     return visited
 
@@ -19,7 +20,7 @@ def go(s):
 
 T = 10
 
-for tc in range(1, 1+1):
+for tc in range(1, T+1):
     l, s = map(int, input().split())
     L = list(map(int, input().split()))
     R = [[] for _ in range((100)+1)]
@@ -31,5 +32,10 @@ for tc in range(1, 1+1):
 
     # print(R)
     # go(s)
-    print(go(s))
+    max_time = 0
+    max_idx = 0
+    for idx, val in enumerate(go(s)):
+        if max_time <= val:
+            max_time, max_idx = val, idx
+    print(f'#{tc} {max_idx}')
 
