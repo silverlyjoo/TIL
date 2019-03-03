@@ -5,11 +5,14 @@ sys.stdin = open('sosu.txt')
 def issosu(a, b):
     result = []
     for i in range(a, b+1):
-        for j in range(2, i):
-            if not i%j:
-                break
-        else:
+        if i == 2:
             result.append(i)
+        elif i > 2:
+            for j in range(2, int(i**0.5)+1):
+                if not i%j:
+                    break
+            else:
+                result.append(i)
     return result
 
 
@@ -21,7 +24,6 @@ L = sorted(issosu(m,n))
 
 t = len(L)
 k = L[0]+L[-1]
-
 
 print(t)
 print(k)
