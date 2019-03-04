@@ -1,4 +1,5 @@
 import sys
+from pprint import pprint
 sys.stdin = open('snailrec.txt')
 
 
@@ -13,18 +14,23 @@ n = int(input())
 
 L = [[0 for _ in range(n)] for _ in range(n)]
 
-
 dx = [1, 0, -1, 0]
 dy = [0, 1, 0, -1]
 
 x, y = 0, 0
-iidx = 0
-idx = iidx%4
+idx = 0
+val = 1
 
-
-for tc in range(n*n):
+while val<=n*n:
     if iswall(x, y, n):
+        L[y][x] = val
+        val += 1
+    else:
+        x -= dx[idx]
+        y -= dy[idx]
+        idx = (idx + 1) %4
+    x += dx[idx]
+    y += dy[idx]
 
-
-    while iswall(x, y, n):
-
+for i in L:
+    print(*i)
