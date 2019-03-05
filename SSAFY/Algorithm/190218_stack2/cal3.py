@@ -52,4 +52,4 @@ T = 10
 for N in range(1, T+1):
     G = int(input())
     S = input()
-    print(f'#{N} {cals2(cals(S))}')
+    print(cals2(cals(S)))
