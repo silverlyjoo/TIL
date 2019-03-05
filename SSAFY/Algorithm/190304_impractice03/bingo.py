@@ -1,4 +1,5 @@
 import sys
+from pprint import pprint
 sys.stdin = open('bingo.txt')
 
 
@@ -14,23 +15,14 @@ def isbingo():
     global result
     for i in range(5):
         if not pan[i][0] and not pan[i][1] and not pan[i][2] and not pan[i][3] and not pan[i][4]:
-            return True
+            result += 1
         if not pan[0][i] and not pan[1][i] and not pan[2][i] and not pan[3][i] and not pan[4][i]:
-            return True
+            result += 1
     if not pan[0][0] and not pan[1][1] and not pan[2][2] and not pan[3][3] and not pan[4][4]:
-        return True
+        result += 1
     if not pan[0][4] and not pan[1][3] and not pan[2][2] and not pan[3][1] and not pan[4][0]:
-        return True
-    return False
+        result += 1
 
-
-def isbingo2(i,j):
-    global result
-    for x in range(4, -1, -1):
-        for y in range(5):
-            if pan[y][x]:
-                return
-    result = 1
 
 def dobingo():
     global result
@@ -38,12 +30,11 @@ def dobingo():
     for num in nums:
         cnt += 1
         delnum(num)
-
         isbingo()
-        if result:
+        if result >= 3:
             return cnt
+        result = 0
 
-# 입력받기
 pan = [list(map(int, input().split())) for i in range(5)]
 nums = []
 for innums in range(5):
