@@ -14,5 +14,4 @@ for i in range(1, N):
 	else:
 		m[i]=L[i]
 
-
-print(f'{max(m):.3f}')
+print('{:.3f}'.format(max(m)))
