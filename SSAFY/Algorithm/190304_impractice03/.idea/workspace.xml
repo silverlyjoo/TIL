@@ -2,17 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7141212-bef6-489f-b868-aafac10ea5ff" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hosu.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hosu.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/robot.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/robot.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../190228_impractice2/.idea/190228_impractice2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../190228_impractice2/.idea/190228_impractice2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../190228_impractice2/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../190228_impractice2/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../190228_impractice2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../190228_impractice2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../190228_impractice2/cdg4.py" beforeDir="false" afterPath="$PROJECT_DIR$/../190228_impractice2/cdg4.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/190304_impractice03.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/190304_impractice03.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../190228_impractice2/doyak.py" beforeDir="false" afterPath="$PROJECT_DIR$/../190228_impractice2/doyak.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake.py" beforeDir="false" afterPath="$PROJECT_DIR$/snake.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake.txt" beforeDir="false" afterPath="$PROJECT_DIR$/snake.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bead.py" beforeDir="false" afterPath="$PROJECT_DIR$/bead.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,11 +19,12 @@
     <session id="1598482890">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.2" value="2" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.open.time.2" value="3" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -60,12 +56,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bead.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
+            <state relative-caret-position="170">
+              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
-                <marker date="1551862464487" expanded="true" signature="88:198" ph="..." />
-                <marker date="1551862464487" expanded="true" signature="371:695" ph="..." />
+                <marker date="1551917589367" expanded="true" signature="88:198" ph="..." />
+                <marker date="1551917589367" expanded="true" signature="371:685" ph="..." />
               </folding>
             </state>
           </provider>
@@ -74,8 +70,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hunter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="5" selection-start-line="5" selection-end-line="9" selection-end-column="16" />
+            <state relative-caret-position="459">
+              <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
                 <marker date="1551858324166" expanded="true" signature="90:231" ph="..." />
@@ -127,9 +123,9 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="796" />
-    <option name="width" value="1131" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="821" />
+    <option name="width" value="1106" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -155,7 +151,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../190228_impractice2" />
     <property name="settings.editor.selected.configurable" value="configurable.group.build" />
   </component>
   <component name="RunDashboard">
@@ -307,10 +303,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="796" y="0" width="1131" height="1047" extended-state="0" />
-    <editor active="true" />
+    <frame x="821" y="0" width="1106" height="1047" extended-state="1" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27538884" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2818352" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -547,22 +542,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bead.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-            <marker date="1551862464487" expanded="true" signature="88:198" ph="..." />
-            <marker date="1551862464487" expanded="true" signature="371:695" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hunter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" selection-start-line="5" selection-end-line="9" selection-end-column="16" />
+        <state relative-caret-position="459">
+          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
             <marker date="1551858324166" expanded="true" signature="90:231" ph="..." />
@@ -575,6 +558,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bead.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+            <marker date="1551917589367" expanded="true" signature="88:198" ph="..." />
+            <marker date="1551917589367" expanded="true" signature="371:685" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

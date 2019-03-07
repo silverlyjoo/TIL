@@ -38,16 +38,6 @@ def bead(x, y, go, R, C):
         ny = ny - dy[i]
 
 
-
-
-
-
-
-
-
-
-
-
 R, C = map(int, input().split())
 L = [list(map(int, input())) for _ in range(C)]
 
