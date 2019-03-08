@@ -1,4 +1,4 @@
-import sys
+import sys, math
 sys.stdin = open('waeme.txt')
 
 
@@ -22,5 +22,5 @@ y, x = findtwo(N)
 for i in range(N):
     for j in range(N):
         if L[i][j] == 1:
-            result.append(int(bgl(x, y, i, j)))
-print(max(result)+1)
+            result.append(math.ceil(bgl(x, y, i, j)))
+print(max(result))
