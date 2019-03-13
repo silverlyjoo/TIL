@@ -1,0 +1,21 @@
+{% extends 'boards/base.html' %}
+
+{% block body %}
+
+<h1>Detail</h1>
+<h2>{{ board.id }} 번째 글</h2>
+<hr>
+
+<h2>{{ board.title }}</h2>
+<br>
+<p>{{ board.content }}</p>
+<p>글 작성 : {{ board.created_at | timesince }} 전</p>
+<p>글 수정 : {{ board.updated_at | timesince }} 전</p>
+<hr>
+<div class="d-flex">
+<a href="{% url 'boards:index' %}" class="btn btn-warning mr-1" role="button">Back</a><br>
+<a href="{% url 'boards:edit' board.pk %}" class="btn btn-info mr-1" role="button">Edit</a><br>
+<a href="{% url 'boards:delete' board.pk %}" class="btn btn-danger mr-1" role="button" onclick="return confirm('R U SURE?')">Delete</a><br>
+</div>
+
+{% endblock %}
