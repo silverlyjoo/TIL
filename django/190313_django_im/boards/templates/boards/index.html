@@ -9,9 +9,9 @@
     <thead>
         <tr>
             <th scope="col" class='text-center'>#</th>
-            <th scope="col" class='text-center'>Last</th>
-            <th scope="col" class='text-center'>Handle</th>
-            <th scope="col" class='text-center'>Handle</th>
+            <th scope="col" class='text-center'>Title</th>
+            <th scope="col" class='text-center'>Created_at</th>
+            <th scope="col" class='text-center'>Detail</th>
             
         </tr>
     </thead>
@@ -19,9 +19,9 @@
         {% for board in boards %}
         <tr>
             <th scope="row" class='text-center'>{{ board.id }}</td>
-            <td class='text-center'>{{ board.title }}</td>
+            <td class='text-center'>{{ board.title }} ({{board.comment_set.all | length}})</td>
             <td class='text-center'>{{ board.created_at | timesince }} 전</td>
-            <td class='text-center'><a href="{% url 'boards:detail' board.pk %}">Detail</a></td>
+            <td class='text-center'><a href="{% url 'boards:detail' board.pk %}">GO</a></td>
         </tr>
         {% endfor %}
     </tbody>

@@ -2,7 +2,7 @@
 
 <h1>Edit</h1>
 <hr>
-<form action="{% url 'boards:update' board.pk %}" method="post">
+<form method="POST">
     {% csrf_token %}
     <div class="form-group">
         <label for="title">Title</label>

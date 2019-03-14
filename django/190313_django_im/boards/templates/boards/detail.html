@@ -1,6 +1,4 @@
-{% extends 'boards/base.html' %}
-
-{% block body %}
+{% extends 'boards/base.html' %} {% block body %}
 
 <h1>Detail</h1>
 <h2>{{ board.id }} 번째 글</h2>
@@ -11,11 +9,51 @@
 <p>{{ board.content }}</p>
 <p>글 작성 : {{ board.created_at | timesince }} 전</p>
 <p>글 수정 : {{ board.updated_at | timesince }} 전</p>
-<hr>
+
 <div class="d-flex">
-<a href="{% url 'boards:index' %}" class="btn btn-warning mr-1" role="button">Back</a><br>
-<a href="{% url 'boards:edit' board.pk %}" class="btn btn-info mr-1" role="button">Edit</a><br>
-<a href="{% url 'boards:delete' board.pk %}" class="btn btn-danger mr-1" role="button" onclick="return confirm('R U SURE?')">Delete</a><br>
+    <a href="{% url 'boards:index' %}" class="btn btn-warning mr-1" role="button">Back</a><br>
+    <a href="{% url 'boards:edit' board.pk %}" class="btn btn-info mr-1" role="button">Edit</a><br>
+    <!--<a href="{% url 'boards:delete' board.pk %}" class="btn btn-danger mr-1" role="button" onclick="return confirm('R U SURE?')">Delete</a><br>-->
+
+
+    <form action="{% url 'boards:delete' board.pk %}" method='POST' onsubmit="return confirm('R U SURE?');">
+        {% csrf_token %}
+        <input type="submit" class="btn btn-danger" value="Delete" />
+    </form>
 </div>
+
+
+<hr>
+<div>{{ comments | length }} 개의 댓글 </div>
+<hr>
+{% for comment in comments %}
+
+<div class="d-flex align-items-center">
+    <div class="mr-3">
+        {{ comment.content }}, {{ comment.created_at | timesince }} 전에 작성된 댓글입니다.
+    </div>
+    <form action="{% url 'boards:comments_delete' board.pk comment.pk %}" method="POST" onsubmit="return confirm('R U SURE?');">
+            {% csrf_token %}
+            <input type="submit" value="delete" class="btn btn-danger btn-sm"/>
+        </form>
+</div>
+<hr>
+{% empty %}
+<p>댓글이 없어요.</p>
+<hr>
+
+{% endfor %}
+
+
+
+
+<p>댓글 작성</p>
+<form action="{% url 'boards:comments_create' board.pk %}" method="POST">
+    {% csrf_token %}
+    <div class='form-group'>
+        <input type="text" name="content" class='form-control mb-3' />
+        <input type="submit" value="comment" class='btn btn-secondary btn-sm'/>
+    </div>
+</form>
 
 {% endblock %}
