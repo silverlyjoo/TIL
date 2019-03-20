@@ -1,0 +1,31 @@
+{% extends 'choice/base.html' %}
+
+{% block body %}
+
+<h3>선택리스트!</h3>
+<hr>
+<a href="{% url 'choice:new' %}">new</a>
+<hr>
+
+
+{% for question in questions %}
+<a href="{% url 'choice:detail' question.pk %}">{{ question }}</a><br>
+
+
+<a href="{% url 'choice:edit' question.pk %}">수정</a><br>
+<hr>
+{% empty %}
+
+<h5>질문이 없습니다</h5>
+
+{% endfor %}
+
+
+
+
+
+
+
+
+
+{% endblock %}

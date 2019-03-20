@@ -1,0 +1,22 @@
+{% extends 'choice/base.html' %}
+{% block body %}
+
+<h3>질문 수정</h3>
+
+
+<form class="mt-5" method="POST">
+    {% csrf_token %}
+  <div class="form-group">
+    <input type="text" class="form-control" name="title" value="{{ question.title }}">
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" name="select_1" value="{{ question.select_1 }}">
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" name="select_2" value="{{ question.select_2 }}">
+  </div>
+  <button type="submit" class="btn btn-primary">저장</button>
+</form>
+
+
+{% endblock %}

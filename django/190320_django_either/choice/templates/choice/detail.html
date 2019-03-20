@@ -1,0 +1,91 @@
+{% extends 'choice/base.html' %}
+{% load static %}{% block body %}
+
+<div class="py-3 px-4 rounded" style="background-color:lightgrey">
+    <h3 class="text-center">{{ question.title }}</h3>
+
+    <br>
+    <div class="row">
+        
+        <div class="col col-4"><img src="{{ question.img_1.url }}"></div>
+        <div class="col col-4"></div>
+        <div class="col col-4"><img src="{{ question.img_2.url }}"></div>
+        
+    </div>
+    
+    
+    
+    <div class="row justify-content-center">
+        <div class="col col-10">
+            
+            
+            {% if first == 0 and second == 0%}
+            <p class="text-center">의견을 적어주세요!</p>
+            {% else %}
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped" role="progressbar" style="width: {{ first }}%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">{{ question.select_1 }} - {{ first }}%</div>
+                <div class="progress-bar bg-danger progress-bar-striped" role="progressbar" style="width: {{second}}%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">{{ question.select_2 }} - {{second}}%</div>
+            </div>
+            {% endif %}
+
+
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<form action="{% url 'choice:new_answer' question.pk %}" method="POST">
+    {% csrf_token %}
+    <input type="radio" name="pick" value="1" /> {{ question.select_1 }}
+    <input type="radio" name="pick" value="0" /> {{ question.select_2 }}
+
+    <input type="text" name="comment" placeholder="의견을 적어주세요" />
+    <input type="submit" value="Submit" />
+</form>
+
+
+<hr>
+{% for answer in answers %}
+
+{% if answer.pick == 1 %}
+
+<div class="d-flex align-items-center">
+    
+    <div class="mr-3">{{ question.select_1 }} - {{ answer.comment }}</div>
+
+<form action="{% url 'choice:answer_delete' question.pk answer.pk%}" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="delete" class="btn btn-warning btn-sm"/>
+</form>
+
+</div>
+<hr>
+
+
+{% else %}
+
+<div class="d-flex align-items-center">
+    
+    <div class="mr-3">{{ question.select_2 }} - {{ answer.comment }}</div>
+
+<form action="{% url 'choice:answer_delete' question.pk answer.pk%}" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="delete" class="btn btn-warning btn-sm"/>
+</form>
+
+</div>
+<hr>
+{% endif %} {% empty %}
+<h5>댓글이 없습니다</h5>
+{% endfor %}
+
+
+<div class="d-flex">
+    <a class="btn btn-primary btn-sm mr-1" href="{% url 'choice:index' %}" role="button">뒤로</a>
+    <form action="{% url 'choice:delete' question.pk %}" method="POST">
+        {% csrf_token %}
+        <input type="submit" value="삭제" class="btn btn-danger btn-sm" />
+    </form>
+</div>
+{% endblock %}
