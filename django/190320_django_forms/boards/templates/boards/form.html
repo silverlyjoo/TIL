@@ -1,0 +1,97 @@
+{% extends 'boards/base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+New
+{% endblock %}
+
+{% block body %}
+
+{% if request.resolver_match.url_name == 'create' %}
+
+<h1>New Board</h1>
+
+{% else %}
+
+<h1>Edit Board</h1>
+
+{% endif %}
+
+
+
+<!--<form method="POST">-->
+<!--    {% csrf_token %}-->
+<!--    {{ form | crispy }}-->
+<!--    <input type="submit" value="Submit"/>-->
+<!--</form><br>-->
+
+
+<!--<form method="POST">-->
+<!--    {% csrf_token %}-->
+<!--    {{ form.title }}-->
+<!--    {{ form.content }}-->
+<!--    <input type="submit" value="Submit"/>-->
+<!--</form><br>-->
+
+
+<!--<form method="POST">-->
+<!--    {% csrf_token %}-->
+<!--    {% for field in form %}-->
+<!--        {{ field.errors }}-->
+<!--        {{ field.label_tag }} {{ field }}-->
+        
+<!--    {% endfor %}-->
+    
+<!--    <input type="submit" value="Submit"/>-->
+<!--</form><br>-->
+
+
+<!--{{ form.non_field_errors }}-->
+<!--<form method="POST">-->
+<!--    {% csrf_token %}-->
+<!--    <div>-->
+<!--        {{ form.title.errors }}-->
+<!--        {{ form.title.label_tag }}-->
+<!--        {{ form.title }}-->
+<!--    </div>-->
+<!--    <div>-->
+<!--        {{ form.content.errors }}-->
+<!--        {{ form.content.label_tag }}-->
+<!--        {{ form.content }}-->
+<!--    </div>-->
+    
+<!--    <input type="submit" value="Submit"/>-->
+<!--</form><br>-->
+
+
+<!--{{ form.non_field_errors }}-->
+<!--<form method="POST">-->
+<!--    {% csrf_token %}-->
+<!--    <div>-->
+<!--        {{ form.title.errors }}-->
+<!--        {{ form.title.label_tag }}-->
+<!--        {{ form.title }}-->
+<!--    </div>-->
+<!--    <div>-->
+<!--        {{ form.content.errors }}-->
+<!--        {{ form.content.label_tag }}-->
+<!--        {{ form.content }}-->
+<!--    </div>-->
+    
+<!--    <input type="submit" value="Submit"/>-->
+<!--</form><br>-->
+
+{% crispy form %}
+
+{% if request.resolver_match.url_name == 'create' %}
+
+<a href="{% url 'boards:index' %}">뒤로</a>
+
+{% else %}
+
+<a href="{% url 'boards:detail' board.pk %}">뒤로</a>
+
+{% endif %}
+
+
+{% endblock %}
+

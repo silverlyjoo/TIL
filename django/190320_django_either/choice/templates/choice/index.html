@@ -1,31 +1,49 @@
-{% extends 'choice/base.html' %}
-
-{% block body %}
-
-<h3>선택리스트!</h3>
-<hr>
-<a href="{% url 'choice:new' %}">new</a>
+{% extends 'choice/base.html' %} {% block body %}
+<div class="row justify-content-end">
+    <h4 class="col-8 pl-5">주제를 선택하세요</h4>
+    <a href="{% url 'choice:new' %}" class="col-4 text-right align-self-end pr-5">new</a>
+</div>
 <hr>
 
 
-{% for question in questions %}
-<a href="{% url 'choice:detail' question.pk %}">{{ question }}</a><br>
+<table class="table table-dark">
+    <theadclass="table table-light table-bordered">
+        <tr>
+            <th scope="col" class="text-center">#</th>
+            <th scope="col" class="text-center">TOPIC</th>
+            <th scope="col" class="text-center">EDIT</th>
+            <th scope="col" class="text-center">DELETE</th>
+            </th>
+        </tr>
+    </thead>
+
+    <tbody class="table table-light">
+        {% for question in questions %}
+        <tr>
+
+            <th scope="row" class="text-center py-3">{{ question.pk }}</th>
+            <td class="text-center py-3"><a href="{% url 'choice:detail' question.pk %}">{{ question }}</a></td>
+            <td class="text-center py-3"><a href="{% url 'choice:edit' question.pk %}" role="button" class="btn btn-info btn-sm">수정</a></td>
+            <td class="text-center py-3">
+                <form action="{% url 'choice:delete' question.pk %}" method="POST">
+                    {% csrf_token %}
+                    <input type="submit" value="삭제" class="btn btn-danger btn-sm" />
+                </form>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            
+            <td class="text-center py-4" colspan="4"><h3>토픽이 없습니다</h3></td>
+        </tr>
 
 
-<a href="{% url 'choice:edit' question.pk %}">수정</a><br>
-<hr>
-{% empty %}
-
-<h5>질문이 없습니다</h5>
-
-{% endfor %}
+        {% endfor %}
 
 
 
+    </tbody>
+</table>
 
 
-
-
-
-
-{% endblock %}
+<hr> {% endblock %}

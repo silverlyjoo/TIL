@@ -11,14 +11,14 @@ class Question(models.Model):
     select_1 = models.CharField(max_length=200)
     img_1 = ProcessedImageField(
         upload_to = choice_image_path,
-        processors = [ResizeToFill(200, 300)],
+        processors = [ResizeToFill(300, 200)],
         format = 'JPEG',
         options = {'quality' : 90},
     )
     select_2 = models.CharField(max_length=200)
     img_2 = ProcessedImageField(
         upload_to = choice_image_path,
-        processors = [ResizeToFill(200, 300)],
+        processors = [ResizeToFill(300, 200)],
         format = 'JPEG',
         options = {'quality' : 90},
     )

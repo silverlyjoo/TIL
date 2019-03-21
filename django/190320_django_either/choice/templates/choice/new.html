@@ -2,22 +2,32 @@
 
 {% block body %}
 
-<h3>새로운 질문</h3>
-
+<h3 >새로운 질문</h3>
+<h5 class='text-right' style="font-family: 'Gaegu', cursive;">새 질문을 등록하려구? 정말 데단해</h5>
 <form class="mt-5" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
   <div class="form-group">
-    <input type="text" class="form-control" name="title" placeholder="주제를 적어주세요">
+    <label for="title">주제를 적어주세요</label>
+    <input type="text" class="form-control" id="title" name="title" placeholder="주제를 적어주세요">
   </div>
   <div class="form-group">
-    <input type="text" class="form-control" name="select_1" placeholder="첫번째 주장">
-    <input type="file" name="img_1" accept="image/*"/>
+    <label for="select_1">첫번째 주장</label>
+    
+    <input type="text" class="form-control" id="select_1" name="select_1" placeholder="첫번째 주장"><br>
+    <label for="img_1">관련 사진</label><br>
+    <input type="file" name="img_1" id="img_1" accept="image/*"/>
   </div>
+  <br>
   <div class="form-group">
-    <input type="text" class="form-control" name="select_2" placeholder="두번째 주장">
-    <input type="file" name="img_2" accept="image/*"/>
+    <label for="select_2">두번째 주장</label>
+    <input type="text" class="form-control" id="select_2" name="select_2" placeholder="두번째 주장"><br>
+    <label for="img_2">관련 사진</label><br>
+    <input type="file" name="img_2" id="img_1" accept="image/*"/>
   </div>
-  <button type="submit" class="btn btn-primary">저장</button>
+  <br>
+  <div class="d-flex">
+    <button type="submit" class="btn btn-primary ml-auto">저장</button>
+  </div>
 </form>
 
 
