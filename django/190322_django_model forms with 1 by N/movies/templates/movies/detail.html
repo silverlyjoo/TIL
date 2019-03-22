@@ -1,0 +1,45 @@
+{% extends 'movies/base.html' %}
+{% load crispy_forms_tags %}
+{% block body %}
+
+<h3>{{movie.title}}</h3>
+<hr>
+<img src="{{ movie.poster_url }}" alt=poster></img>
+<p>장르 : {{movie.genre}}</p>
+<p>누적관객수 : {{movie.audience}}</p>
+<p>영화 소개 : {{movie.description}}</p>
+<p>포스터 url : {{movie.poster_url}}</p>
+<div class="d-flex">
+<a href="{% url 'movies:index' %}" class="btn btn-primary btn-sm mr-3">뒤로</a><br>
+<a href="{% url 'movies:update' movie.pk %}" class="btn btn-info btn-sm mr-3">수정</a><br>
+<form action="{% url 'movies:delete' movie.pk %}" method="POST">
+    {% csrf_token %}
+    <input type="submit" class="btn btn-danger btn-sm" value="삭제"/>
+</form>
+</div>
+<br>
+
+<form action="{% url 'movies:scores_create' movie.pk %}" method="POST">
+    {% csrf_token %}
+    {{ form_score | crispy }}
+    <input type="submit" class="btn btn-primary btn-sm" value="저장"/>
+</form>
+<br>
+<br>
+<hr>
+{% for score in scores %}
+<div class="row justify-content-center">
+<div class="col-8 d-flex justify-content-between align-items-center">
+<p class="m-0">{{ score.score }}</p>
+<p class="m-0">{{ score.content }}</p>
+<form action="{% url 'movies:score_delete' movie.pk score.pk %}" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="삭제" class="btn btn-danger btn-sm"/>
+</form>
+</div></div>
+<hr>
+
+{% empty %}
+<h3>평점이 없습니다</h3>
+{% endfor %}
+{% endblock %}

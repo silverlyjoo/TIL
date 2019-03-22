@@ -1,0 +1,33 @@
+{% extends 'movies/base.html' %} {% block title %} Index {% endblock %} {% block body %}
+
+<h2 class="my-4 text-center">영화</h2>
+<hr class="mb-5">
+<a href="{% url 'movies:create' %}">새 영화</a>
+{% for movie in movies %}
+<div class="text-center mb-4">
+    <a href="{% url 'movies:detail' movie.pk %}">
+    <img src="{{ movie.poster_url }}" alt=poster></img></a>
+        <br>
+        {% if movie.score_avg %}
+        
+        {{ movie.title }} - 종합 평점 : 
+        
+        
+        <span> {{ movie.score_avg | floatformat:1 }}</span>
+        
+        {% else %}
+        
+        {{ movie.title }}
+        
+        {% endif %}
+        
+        
+</div>
+
+
+{% empty %}
+
+{% endfor %}
+
+
+{% endblock %}
