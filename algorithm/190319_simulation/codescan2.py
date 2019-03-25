@@ -1,6 +1,5 @@
 import sys
 sys.stdin = open('codescan.txt')
-sys.stdout = open('codescan_output.txt','w')
 
 
 codes = [
