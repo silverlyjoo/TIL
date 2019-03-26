@@ -1,0 +1,2 @@
+
+help(list.index)
