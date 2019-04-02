@@ -10,8 +10,8 @@ def findset(x):
 def mst():
     global V
     c = 0 # 간선갯수
-    s = 0
-    i = 0
+    s = 0 # 가중치의 합
+    i = 0 # 제어변수
 
     while c < V:
         p1 = findset(edge[i][0])
