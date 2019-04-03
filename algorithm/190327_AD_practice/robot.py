@@ -3,27 +3,25 @@ sys.stdin = open('robot.txt')
 
 
 def howlong(node1, node2):
-    return abs(node1[0]-node2[0])+ abs(node1[1]+node2[1])
+    return abs(node1[0]-node2[0])+ abs(node1[1] - node2[1])
 
 
-def comb(idx, cnt):
+def perm(idx, sum):
+    global result
 
-    
-
-    if cnt > 2:
-
+    if sum > result:
         return
-    
-    if idx > 2:
+
+    if idx >= N:
+        if sum < result:
+            result = sum
         return
-    
+
     for i in range(N):
         if not chk[i]:
-            chk[i] = idx
-            comb(idx + 1, cnt + 1)
-            chk[i] = idx
-            comb(idx + 1, cnt)
-
+            chk[i] = 1
+            perm(idx+1, sum + memo[idx][i])
+            chk[i] = 0
 
 
 
@@ -49,9 +47,13 @@ for tc in range(1, T+1):
     for c in range(N):
         for r in range(N):
             memo[c][r] = howlong(cookies[c], robots[r])
-    print(memo)
 
+    T = [0 for _ in range(N)]
     chk = [0 for _ in range(N)]
+    result = float('inf')
+    perm(0, 0)
+    print(result)
+
 
 
     
