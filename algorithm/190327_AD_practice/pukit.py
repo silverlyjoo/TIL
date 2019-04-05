@@ -6,7 +6,8 @@ def comb(idx, cnt, ssum, bsum):
     global result
 
     if idx >= N:
-        if cnt!=0:
+        # if cnt!=0:
+        if ssum != 1 and bsum != 0:
             a = abs(bsum-ssum)
             if a <= result:
                 result = a
@@ -21,7 +22,7 @@ data = []
 for _ in range(N):
     s, b = map(int, input().split())
     data.append((s,b))
-chk = [0 for _ in range(N)]
+
 result = float('inf')
 comb(0,0,1,0)
 print(result)

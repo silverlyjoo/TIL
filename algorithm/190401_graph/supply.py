@@ -1,6 +1,7 @@
-import sys
+import sys, time
 sys.stdin = open('supply.txt')
 
+start_time = time.time()
 
 def iswall(y, x, N):
     if y < 0 or y >= N: return True
@@ -47,3 +48,4 @@ for tc in range(1, T+1):
     print('#{} {}'.format(tc, D[N-1][N-1]))
 
     
+print(time.time()-start_time)
