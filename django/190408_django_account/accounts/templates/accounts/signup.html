@@ -1,0 +1,15 @@
+{% extends 'boards/base.html' %}
+
+{% block body %}
+
+{% load crispy_forms_tags %}
+
+<h1> 회원가입 </h1>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form | crispy }}
+    <input type="submit" name="sign-up"/>
+</form>
+
+{% endblock %}
