@@ -1,0 +1,28 @@
+{% extends 'boards/base.html' %}
+
+{% block body %}
+
+{% load crispy_forms_tags %}
+
+{% if request.resolver_match.url_name == 'signup' %}
+
+<h1> 회원가입 </h1>
+
+{% elif request.resolver_match.url_name == 'edit' %}
+
+<h1> 회원정보 수정 </h1>
+
+{% elif request.resolver_match.url_name == 'change_password' %}
+
+<h1> 비밀번호 변경 </h1>
+
+{% endif %}
+
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form | crispy }}
+    <input type="submit" value="submit"/>
+</form>
+
+{% endblock %}

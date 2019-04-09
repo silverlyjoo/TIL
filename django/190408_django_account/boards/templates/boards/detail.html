@@ -10,10 +10,15 @@ Index
 <hr>
 <p>{{ board.content }}</p>
 <a href="{% url 'boards:index' %}">뒤로</a>
+
+{% if user == board.user %}
+
 <a href="{% url 'boards:update' board.pk  %}">수정</a>
 <form action="{% url 'boards:delete' board.pk %}" method="POST">
     {% csrf_token %}
     <input type="submit" value="삭제"/>
 </form>
+
+{% endif %}
 
 {% endblock %}
