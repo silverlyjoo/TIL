@@ -1,5 +1,8 @@
 {% extends 'boards/base.html' %}
 
+{% load crispy_forms_tags %}
+
+
 {% block title %}
 Index
 {% endblock %}
@@ -21,4 +24,42 @@ Index
 
 {% endif %}
 
+
+
+{% if user.is_authenticated %}
+
+<form method="POST" action="{% url 'boards:comment_create' board.pk %}">
+    {% csrf_token %}
+    {{ comment_form | crispy }}
+    <input type="submit" value="Submit"/>
+</form><br>
+
+
+{% else %}
+<div>댓글을 작성하려면<a href="{% url 'accounts:login' %}">로그인</a>하세요</div>
+
+{% endif %}
+
+
+
+
+
+{% for comment in board.comment_set.all %}
+
+<div class="d-flex">
+    <span>{{ comment.user }} : {{comment}}</span>
+    
+    {% if user == comment.user %}
+    <form action="{% url 'boards:comment_delete' board.pk comment.pk %}" method="POST">
+        {% csrf_token %}
+        <input type="submit" value="delete"/>
+        {% endif %}
+    </form>
+    
+    
+</div><hr>
+{% empty %}
+<div>댓글이 없습니다.</div>
+
+{% endfor %}
 {% endblock %}

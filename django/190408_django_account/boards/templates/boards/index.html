@@ -15,7 +15,7 @@ Index
 
 <hr>
 {% for board in boards %}
-<p><b>작성자 : {{ board.user }}</b></p>
+<p><b>작성자 : <a href="{% url 'accounts:profile' board.user.pk %}">{{ board.user }}</a></b></p>
 <p>{{ board.pk }}</p>
 <p><a href="{% url 'boards:detail' board.pk %}">{{ board.title }}</a></p>
 

@@ -1,0 +1,54 @@
+{% extends 'boards/base.html' %} {% block body %}
+
+
+{% if profile_user == user %}
+
+<a href="{% url 'accounts:edit' %}">회원정보수정</a>
+<form action="{% url 'accounts:delete' %}" method="POST" onsubmit="return confirm('r u sure?');">
+    {% csrf_token %}
+    <input type="submit" value="탈퇴" />
+</form>
+<br>
+<hr>
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+<h3>{{ profile_user }} 님의 작성글</h3>
+<hr> 
+
+{% for board in profile_user.board_set.all %}
+<div><a href="{% url 'boards:detail' board.pk %}">{{ board.title }}</a></div>
+댓글수 : {{ board.comment_set.all | length }}
+<br>
+<hr>
+{% empty %}
+<div> 작성한 글이 없습니다</div>
+<br>
+{% endfor %}
+
+<h3>{{ profile_user }} 님이 작성한 댓글</h3>
+<hr> 
+
+{% for comment in profile_user.comment_set.all %}
+
+<div>
+    게시글 : <a href="{% url 'boards:detail' comment.board.pk %}">{{ comment.board }}</a><br>
+    댓글 : {{comment}}</div>
+<hr>
+{% empty %}
+<div> 작성한 글이 없습니다</div>
+<br>
+{% endfor %}
+
+
+{% endblock %}

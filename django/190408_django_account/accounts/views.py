@@ -1,10 +1,14 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_list_or_404, get_object_or_404
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, PasswordChangeForm
 from django.contrib.auth import login as auth_login
 from django.contrib.auth import logout as auth_logout
 from django.contrib.auth import update_session_auth_hash as update_session
+from .forms import UserCustomChangeForm, UserCustomCreationForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import get_user_model
 
-from .forms import UserCustomChangeForm
+from boards.models import Board, Comment
+
 
 
 # Create your views here.
@@ -14,14 +18,14 @@ def signup(request):
         return redirect('boards:index')
     
     if request.method == "POST":
-        form = UserCreationForm(request.POST)
+        form = UserCustomCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
             auth_login(request, user)
             return redirect('boards:index')
     
     else:
-        form = UserCreationForm()
+        form = UserCustomCreationForm()
         
     context = {'form':form}
     return render(request, 'accounts/auth_form.html', context)
@@ -83,3 +87,11 @@ def change_password(request):
     
     context = {'form':form,}
     return render(request, 'accounts/auth_form.html', context)
+
+@login_required
+def profile(request, user_pk):
+    profile_user = get_object_or_404(get_user_model(), pk=user_pk)
+    context = {
+        'profile_user':profile_user,
+    }
+    return render(request, 'accounts/profile.html', context)
