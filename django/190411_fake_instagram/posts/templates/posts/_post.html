@@ -1,0 +1,16 @@
+{% for post in posts %}
+<div class="row mb-2 justify-content-center">
+<div class="col-3 d-flex justify-content-center">content : {{ post }}</div>
+
+<div class="col-3 d-flex justify-content-center">
+<form action="" method="POST">
+    <input type="submit" value="수정" class="btn btn-info btn-sm"/>
+</form>
+</div>
+<div class="col-3 d-flex justify-content-center">
+<form action="" method="POST">
+    <input type="submit" value="삭제" class="btn btn-danger btn-sm"/>
+</form>
+</div>
+</div>
+{% endfor %}

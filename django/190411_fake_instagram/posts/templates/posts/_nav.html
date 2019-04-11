@@ -1,0 +1,26 @@
+<nav class="sticky-top navbar navbar-expand-lg navbar-dark bg-dark px-5">
+    <a class="navbar-brand" href="{% url 'posts:list' %}">
+      <i class="fab fa-instagram"> | Instagram </i>
+  </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Timelines</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Tags</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'posts:create' %}">New</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">MyPage</a>
+            </li>
+        </ul>
+    </div>
+</nav>
