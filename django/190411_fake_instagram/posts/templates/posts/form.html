@@ -1,15 +1,38 @@
 {% extends 'base.html' %}
-{% load crispy_forms_tags %}
+{% load bootstrap4 %}
 {% block title %}
 New
 {% endblock %}
 
 {% block content %}
 
-<form action="" method="POST">
+
+{% if request.resolver_match.url_name == 'create' %}
+<h3>New</h3>
+{% else %}
+<h3>Edit</h3>
+{% endif %}
+
+
+<form action="" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
-    {{ form | crispy }}
-    <input type="submit" value="Submit" class="btn btn-primary"/>
+    {% bootstrap_form post_form%}
+    
+    
+    {% if request.resolver_match.url_name == 'create' %}
+    {% if image_form %}
+    {% bootstrap_form image_form show_label=False %}
+    {% endif %}
+    
+    
+    {% endif %}
+    
+    <div class="d-flex justify-content-end">
+    <button type="submit" class="btn btn-secondary btn-sm">Submit</button>
+    <button type="reset" class="btn btn-light btn-sm">Reset</button>
+    </div>
 </form>
+
+
 
 {% endblock %}

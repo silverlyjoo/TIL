@@ -3,7 +3,14 @@
 {% block title %}Posts{% endblock %} 
 {% block content %}
 <h1>LIST</h1>
-
+<div class="d-flex flex-wrap justify-content-center">
+{% for post in posts %}
 {% include 'posts/_post.html' %}
+{% empty %}
 
+<h3>게시글이 없습니다</h3>
+
+
+{% endfor %}
+</div>
 {% endblock %}

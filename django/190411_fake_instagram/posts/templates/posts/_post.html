@@ -1,16 +1,42 @@
-{% for post in posts %}
-<div class="row mb-2 justify-content-center">
-<div class="col-3 d-flex justify-content-center">content : {{ post }}</div>
+<div class="col-10 col-md-6 col-lg-4 my-3">
+<div class="card">
+    {% if post.image_set %}
 
-<div class="col-3 d-flex justify-content-center">
-<form action="" method="POST">
-    <input type="submit" value="수정" class="btn btn-info btn-sm"/>
-</form>
+
+    <div id="post{{post.pk}}" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+
+            {% for image in post.image_set.all %}
+
+            <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}">
+                <img src="{{ image.file.url }}" class="d-block w-100" alt="{{ image.file }}">
+            </div>
+
+            {% endfor %}
+
+        </div>
+        <a class="carousel-control-prev" href="#post{{post.pk}}" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#post{{post.pk}}" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    {% else %}
+    <br>
+    <h5 class="text-center">no-image</h5>
+    {% endif %}
+    <div class="card-body">
+        <p class="card-text">{{ post }}</p>
+        <div class="d-flex justify-content-end">
+            <a href="{% url 'posts:update' post.pk %}" class="btn btn-light"><i class="far fa-edit"></i></a>
+            <form action="{% url 'posts:delete' post.pk %}" method="POST" onsubmit="return confirm('R U SURE?');"> {% csrf_token %}
+                <button type="submit" class="btn btn-light"><i class="far fa-trash-alt"></i></button>
+            </form>
+        </div>
+    </div>
 </div>
-<div class="col-3 d-flex justify-content-center">
-<form action="" method="POST">
-    <input type="submit" value="삭제" class="btn btn-danger btn-sm"/>
-</form>
 </div>
-</div>
-{% endfor %}
