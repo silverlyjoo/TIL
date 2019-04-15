@@ -1,26 +1,32 @@
 from django.shortcuts import render, redirect, get_list_or_404, get_object_or_404
-from .models import Post, Image
-from .forms import PostForm, ImageForm
-
+from .models import Post, Image, Comment
+from .forms import PostForm, ImageForm, CommentForm
+from django.contrib.auth.decorators import login_required
+from django.views.decorators.http import require_POST
 # Create your views here.
 
 
 def list(request):
     posts = Post.objects.order_by('-pk')
-    # posts = get_list_or_404(Post.objects.order_by('-pk'))
+    
+    comment_form = CommentForm()
     context = {
-        'posts':posts
+        'posts':posts,
+        'comment_form':comment_form
     }
     return render(request, 'posts/list.html', context)
     
     
+
+@login_required
 def create(request):
-    
     if request.method == "POST":
         post_form = PostForm(request.POST)
         
         if post_form.is_valid():
-            post = post_form.save()
+            post = post_form.save(commit=False)
+            post.post_user = request.user
+            post.save()
             
             for image in request.FILES.getlist('file'):
                 request.FILES['file'] = image
@@ -42,8 +48,13 @@ def create(request):
     return render(request, 'posts/form.html', context)
     
 
+@login_required
 def update(request, post_pk):
     post = get_object_or_404(Post, pk=post_pk)
+    
+    if post.post_user != request.user:
+        return redirect('posts:list')
+    
     if request.method == "POST":
         post_form = PostForm(request.POST, instance=post)
         if post_form.is_valid():
@@ -56,12 +67,43 @@ def update(request, post_pk):
     }
     return render(request, 'posts/form.html', context)
     
-        
+    
+@login_required
 def delete(request, post_pk):
     post = get_object_or_404(Post, pk=post_pk)
+    
+    if post.post_user != request.user:
+        return redirect('posts:list')
+    
     if request.method == "POST":
         post.delete()
         return redirect('posts:list')
     return redirect('posts:list')
     
+
+
+
+@require_POST
+@login_required
+def comment_create(request, post_pk):
+    form = CommentForm(request.POST)
+    if form.is_valid():
+        comment = form.save(commit=False)
+        comment.user = request.user
+        comment.post_id = post_pk
+        comment.save()
+    
+    return redirect('posts:list')
+    
+    
+@require_POST
+@login_required
+def comment_delete(request, post_pk, comment_pk):
+    comment = get_object_or_404(Comment, pk=comment_pk)
+    
+    if request.user != comment.user:
+        return redirect('posts:list')
+    
+    comment.delete()
+    return redirect('posts:list')
     

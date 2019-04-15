@@ -1,42 +1,101 @@
+{% load bootstrap4 %}
 <div class="col-10 col-md-6 col-lg-4 my-3">
-<div class="card">
-    {% if post.image_set %}
-
-
-    <div id="post{{post.pk}}" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-
-            {% for image in post.image_set.all %}
-
-            <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}">
-                <img src="{{ image.file.url }}" class="d-block w-100" alt="{{ image.file }}">
+    <div class="card">
+        <div class="card-header">
+            <div class="d-flex justify-content-between">
+                <div><b>{{ post.post_user }}</b></div>
+                <div>{{ post.updated_at | timesince }} 전</div>
             </div>
-
-            {% endfor %}
-
         </div>
-        <a class="carousel-control-prev" href="#post{{post.pk}}" role="button" data-slide="prev">
+        {% if post.image_set %}
+
+
+        <div id="post{{post.pk}}" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+
+                {% for image in post.image_set.all %}
+
+                <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}">
+                    <img src="{{ image.file.url }}" class="d-block w-100" alt="{{ image.file }}">
+                </div>
+
+                {% endfor %}
+
+            </div>
+            <a class="carousel-control-prev" href="#post{{post.pk}}" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
         </a>
-        <a class="carousel-control-next" href="#post{{post.pk}}" role="button" data-slide="next">
+            <a class="carousel-control-next" href="#post{{post.pk}}" role="button" data-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
-    </div>
+        </div>
 
-    {% else %}
-    <br>
-    <h5 class="text-center">no-image</h5>
-    {% endif %}
-    <div class="card-body">
-        <p class="card-text">{{ post }}</p>
-        <div class="d-flex justify-content-end">
-            <a href="{% url 'posts:update' post.pk %}" class="btn btn-light"><i class="far fa-edit"></i></a>
-            <form action="{% url 'posts:delete' post.pk %}" method="POST" onsubmit="return confirm('R U SURE?');"> {% csrf_token %}
-                <button type="submit" class="btn btn-light"><i class="far fa-trash-alt"></i></button>
+        {% else %}
+        <br>
+        <h5 class="text-center">no-image</h5>
+        {% endif %}
+        <div class="card-body">
+            <div class="d-flex align-items-center justify-content-between">
+                <p class="card-text m-0">{{ post }}</p>
+
+
+                {% if user.is_authenticated %}
+                <div class="d-flex justify-content-end">
+                    {% if post.post_user == request.user %}
+
+                    <a href="{% url 'posts:update' post.pk %}" class="btn btn-light"><i class="far fa-edit"></i></a>
+                    <form action="{% url 'posts:delete' post.pk %}" method="POST" onsubmit="return confirm('R U SURE?');"> {% csrf_token %}
+                        <button type="submit" class="btn btn-light"><i class="far fa-trash-alt"></i></button>
+                    </form>
+
+                    {% endif %}
+
+                    <a href="{% url 'posts:list'%}" class="btn btn-light"><i class="far fa-comment"></i></a>
+                </div>
+                {% endif %}
+
+            </div>
+
+            <hr>
+            {% for comment in post.comment_set.all %}
+            <p class="card-text d-inline">
+                <b>{{ comment.user }} </b>
+                {{ comment }}
+                
+            {% if comment.user == request.user %}
+            
+            <form action="{% url 'posts:comment_delete' post.pk comment.pk %}" method="POST" class="d-inline">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-light border-0"><i class="fas fa-times"></i></button>
             </form>
+            
+            {% endif %}
+            </p>
+            
+            
+            
+            
+            {% empty %}
+            <p class="card-text">No comments</p>
+            {% endfor %}
+
+            {% if user.is_authenticated %}
+            <div class="card-footer">
+            <form action="{% url 'posts:comment_create' post.pk %}" method="POST">
+                    {% csrf_token %}
+                    {% bootstrap_form comment_form show_label=False %}
+                    <button type="submit" class="btn btn-light p-0"><i class="fas fa-pencil-alt fa"></i></button>
+            </form>
+            
+            </div>
+            {% else %}
+            <div class="card-footer pb-0">
+            <p class="m-0">댓글을 작성하려면 <a href="{% url 'accounts:login' %}" class="card-link">로그인</a>하세요</p>
+            </div>
+            {% endif %}
+            
         </div>
     </div>
-</div>
 </div>
