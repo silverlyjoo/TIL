@@ -12,7 +12,7 @@ def list(request):
     comment_form = CommentForm()
     context = {
         'posts':posts,
-        'comment_form':comment_form
+        'comment_form':comment_form,
     }
     return render(request, 'posts/list.html', context)
     
@@ -107,3 +107,25 @@ def comment_delete(request, post_pk, comment_pk):
     comment.delete()
     return redirect('posts:list')
     
+    
+
+@login_required
+def like(request, post_pk):
+    post = get_object_or_404(Post, pk=post_pk)
+    
+    r_user = request.user
+    
+    # 이미 해당 유저가 like_users에 존재하면 해당 유저를 삭제, 없으면 추가
+    
+    if r_user in post.like_users.all():
+        post.like_users.remove(r_user)
+    else:
+        post.like_users.add(r_user)
+        
+    return redirect('posts:list')
+    
+    # if post.like_users.filter(pk=r_user.pk).exist():
+    #     post.like_users.remove(r_user)
+    # else:
+    #     post.like_users.add(r_user)
+        

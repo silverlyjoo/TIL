@@ -1,0 +1,43 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1 class="text-center">{{ people.username }} 의 프로필</h1>
+<br>
+<h3 class="text-center">{{ people.username }} 이 작성한 게시글</h3>
+
+
+<div class="row">
+
+    {% for post in people.post_set.all|dictsortreversed:"pk" %}
+    <div class="col-4 my-2">
+        <div class="card">
+            <img src="{{ post.image_set.first.file.url }}" class="card-img-top" alt="{{ post.image_set.first.file }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ post.content }}</h5>
+                <p class="card-text">{{ post.like_users.count }} 명이 좋아합니다.</p>
+                <p class="card-text">{{ post.comment_set.count }} 개의 댓글</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+<hr>
+<h3 class="text-center">{{ people.username }} 이 작성한 댓글</h3>
+<div class="row">
+    {% for comment in people.comment_set.all|dictsortreversed:"pk" %}
+
+    <div class="col-12 my-2">
+        <div class="card">
+            <div class="card-body">
+                <blockquote class="blockquote">
+                    <p class="mb-0">{{ comment.post }}</p>
+                    <footer class="blockquote-footer">{{ comment }}</footer>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+
+
+    {% endfor %}
+</div>
+{% endblock %}

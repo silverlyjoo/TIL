@@ -9,7 +9,8 @@
         </div>
         {% if post.image_set %}
 
-
+<a href="{% url 'posts:like' post.pk %}">
+                    
         <div id="post{{post.pk}}" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
 
@@ -31,6 +32,10 @@
             <span class="sr-only">Next</span>
         </a>
         </div>
+</a>
+
+
+
 
         {% else %}
         <br>
@@ -38,11 +43,25 @@
         {% endif %}
         <div class="card-body">
             <div class="d-flex align-items-center justify-content-between">
-                <p class="card-text m-0">{{ post }}</p>
+                <div class="d-flex align-items-center justify-content-start">
+                    <p class="card-text m-0">{{ post }}</p>
+
+
+
+                </div>
 
 
                 {% if user.is_authenticated %}
+
                 <div class="d-flex justify-content-end">
+                    <a href="{% url 'posts:like' post.pk %}" class="btn btn-light" class="card-link">
+                        <div class="text-danger">
+                            {% if user in post.like_users.all %}
+                            <i class="fas fa-heart"></i> {% else %}
+                            <i class="far fa-heart"></i> {% endif %} {{ post.like_users.all | length }}
+                        </div>
+                    </a>
+
                     {% if post.post_user == request.user %}
 
                     <a href="{% url 'posts:update' post.pk %}" class="btn btn-light"><i class="far fa-edit"></i></a>
@@ -53,49 +72,67 @@
                     {% endif %}
 
                     <a href="{% url 'posts:list'%}" class="btn btn-light"><i class="far fa-comment"></i></a>
+
+
+
                 </div>
                 {% endif %}
 
             </div>
-
-            <hr>
-            {% for comment in post.comment_set.all %}
-            <p class="card-text d-inline">
-                <b>{{ comment.user }} </b>
-                {{ comment }}
-                
+        </div>
+        <hr> {% for comment in post.comment_set.all %}
+        
+        
+        <div class="d-flex justify-content-between px-4 py-1">
+        <p class="card-text d-inline">
+            
+            <b>{{ comment.user }} </b> {{ comment }}
+        </p>
+            
             {% if comment.user == request.user %}
             
-            <form action="{% url 'posts:comment_delete' post.pk comment.pk %}" method="POST" class="d-inline">
-                {% csrf_token %}
-                <button type="submit" class="btn btn-light border-0"><i class="fas fa-times"></i></button>
-            </form>
-            
-            {% endif %}
-            </p>
-            
-            
-            
-            
-            {% empty %}
-            <p class="card-text">No comments</p>
-            {% endfor %}
-
-            {% if user.is_authenticated %}
-            <div class="card-footer">
-            <form action="{% url 'posts:comment_create' post.pk %}" method="POST">
+                <form action="{% url 'posts:comment_delete' post.pk comment.pk %}" method="POST">
                     {% csrf_token %}
-                    {% bootstrap_form comment_form show_label=False %}
-                    <button type="submit" class="btn btn-light p-0"><i class="fas fa-pencil-alt fa"></i></button>
-            </form>
-            
-            </div>
-            {% else %}
-            <div class="card-footer pb-0">
-            <p class="m-0">댓글을 작성하려면 <a href="{% url 'accounts:login' %}" class="card-link">로그인</a>하세요</p>
-            </div>
+                    <button type="submit" class="btn btn-white border-0 btn-sm"><i class="fas fa-times"></i></button>
+                </form>
             {% endif %}
-            
         </div>
+            
+        
+
+
+
+
+        {% empty %}
+        <p class="card-text px-4">No comments</p>
+        {% endfor %} {% if user.is_authenticated %}
+        <div class="card-footer">
+
+
+
+            <form action="{% url 'posts:comment_create' post.pk %}" method="POST">
+
+                <div class="row align-items-center justify-content-center">
+
+                    {% csrf_token %}
+                    <div class="col-12 pt-3">
+
+                        {% bootstrap_form comment_form show_label=False %}</div>
+                    <!--<div class="col-2">-->
+                    <!--<button type="submit" class="btn btn-light p-0"><i class="fas fa-pencil-alt fa"></i></button>-->
+                    <!--</div>-->
+                </div>
+
+
+            </form>
+
+        </div>
+        {% else %}
+        <div class="card-footer p-4">
+            <p class="m-0">댓글을 작성하려면 <a href="{% url 'accounts:login' %}" class="card-link">로그인</a>하세요</p>
+        </div>
+        {% endif %}
+
+
     </div>
 </div>
