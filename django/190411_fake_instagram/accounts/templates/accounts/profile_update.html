@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{% block content %}
+<h1>프로필</h1>
+<form method="POST">
+    {% csrf_token %}
+    {% bootstrap_form profile_form %}
+    {% buttons submit="Edit" reset="Cancle" %}
+    {% endbuttons %}
+</form>
+
+<a href="{% url 'people' user.username %}">Back</a>
+{% endblock %}

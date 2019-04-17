@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block content %}
+
+<h1>회원 정보 수정</h1>
+<form method="POST">
+    {% csrf_token %}
+    {% bootstrap_form user_change_form %}
+    {% buttons submit="Edit" reset="Cancle" %}
+    {% endbuttons %}
+</form>
+
+<div class="d-flex">
+<form action="{% url 'accounts:delete' %}" method="POST" onsubmit="return confirm('탈퇴하시겠습니까?');">
+    {% csrf_token %}
+    <input type="submit" value="회원탈퇴" class="btn btn-primary btn-sm"/>
+</form>
+
+<a href="{% url 'people' user.username %}" class="btn btn-info btn-sm ml-3">Back</a>
+</div>
+
+{% endblock %}

@@ -11,18 +11,22 @@
                 <a class="nav-link" href="#">Timelines</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="{% url 'posts:explore' %}">Explore</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="#">Tags</a>
             </li>
         </ul>
+
+        {% if user.is_authenticated %}
         <ul class="navbar-nav">
-        <li class="nav-item">
+            <li class="nav-item">
                 <span class="nav-text text-light">{{ user.username }}님 반갑습니다</span>
             </li>
         </ul>
-        
-        {% if user.is_authenticated %}
+        {% endif %} {% if user.is_authenticated %}
         <ul class="navbar-nav">
-            
+
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'posts:create' %}">New</a>
             </li>
@@ -33,9 +37,9 @@
                 <a class="nav-link" href="{% url 'accounts:logout' %}">Logout</a>
             </li>
         </ul>
-        
+
         {% else %}
-        
+
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'accounts:login' %}">Login</a>
@@ -44,9 +48,9 @@
                 <a class="nav-link" href="{% url 'accounts:signup' %}">Sign up</a>
             </li>
         </ul>
-        
+
         {% endif %}
-        
-        
+
+
     </div>
 </nav>

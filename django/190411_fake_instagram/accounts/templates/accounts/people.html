@@ -1,9 +1,35 @@
 {% extends 'base.html' %} {% block content %}
 
 <h1 class="text-center">{{ people.username }} 의 프로필</h1>
-<br>
-<h3 class="text-center">{{ people.username }} 이 작성한 게시글</h3>
 
+<div class="jumbotron jumbotron-fluid text-center mb-2 text-white bg-dark">
+    <div class="container">
+        <h1 class="display-4">{{ people.profile.nickname}}</h1>
+        <p class="lead">{{ people.profile.introduction}}</p>
+        <hr class="border-white my-4">
+        <p class="lead">팔로잉 : {{ people.followings.count }} 팔로워 : {{ people.followers.count }}</p>
+        
+        {% if user != people %}
+        {% if user in people.followers.all %}
+        <a href="{% url 'accounts:follow' people.pk %}" class="btn btn-outline-primary">Unfollow</a>
+        {% else %}
+        <a href="{% url 'accounts:follow' people.pk %}" class="btn btn-primary">Follow</a>
+        {% endif %}
+        
+        {% endif %}
+        
+    </div>
+</div>
+
+
+{% if people == user %}
+<a href="{% url 'accounts:update' %}" class="badge badge-info">회원수정</a>
+<a href="{% url 'accounts:profile_update' %}" class="badge badge-success">프로필 수정</a>
+<a href="{% url 'accounts:password' %}" class="badge badge-warning">비밀번호수정</a>
+<br> {% endif %}
+
+
+<h3 class="text-center">{{ people.username }} 이 작성한 게시글</h3>
 
 <div class="row">
 

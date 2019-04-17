@@ -83,17 +83,17 @@
         <hr> {% for comment in post.comment_set.all %}
         
         
-        <div class="d-flex justify-content-between px-4 py-1">
-        <p class="card-text d-inline">
+        <div class="d-flex justify-content-between align-items-center px-4 py-1">
+        <p class="card-text d-inline m-0">
             
             <b>{{ comment.user }} </b> {{ comment }}
         </p>
             
             {% if comment.user == request.user %}
             
-                <form action="{% url 'posts:comment_delete' post.pk comment.pk %}" method="POST">
+                <form action="{% url 'posts:comment_delete' post.pk comment.pk %}" method="POST" class="d-flex align-items-center">
                     {% csrf_token %}
-                    <button type="submit" class="btn btn-white border-0 btn-sm"><i class="fas fa-times"></i></button>
+                    <button type="submit" class="btn btn-white border-0 btn-sm p-0"><i class="fas fa-times fa-sm"></i></button>
                 </form>
             {% endif %}
         </div>
@@ -105,7 +105,9 @@
 
         {% empty %}
         <p class="card-text px-4">No comments</p>
-        {% endfor %} {% if user.is_authenticated %}
+        {% endfor %}
+        <br>
+        {% if user.is_authenticated %}
         <div class="card-footer">
 
 

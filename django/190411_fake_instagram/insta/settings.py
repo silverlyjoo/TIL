@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'bootstrap4',
     'imagekit',
+    'django_extensions',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -134,3 +135,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 
+AUTH_USER_MODEL = "accounts.User"
