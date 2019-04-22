@@ -72,6 +72,8 @@ def delete(request):
     
 @login_required
 def update(request):
+    
+    
     if request.method == "POST":
         user_change_form = UserCustomChangeForm(request.POST, instance=request.user)
         if user_change_form.is_valid():
@@ -107,7 +109,7 @@ def password(request):
 
 @login_required
 def profile_update(request):
-    
+    profile = Profile.objects.get_or_create(user=request.user)
     if request.method == "POST":
         form = ProfileForm(request.POST, instance=request.user.profile)
         if form.is_valid():
