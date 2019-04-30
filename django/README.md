@@ -64,7 +64,7 @@ POST
 
 ```python
 form = Form(request.POST) # POST 요청 양식에 넣음
-form.save() # is_valid() > save
+user = form.save() # is_valid() > save
 auth_login(request, user) # 로그인 해주고 리다이렉트
 ```
 
