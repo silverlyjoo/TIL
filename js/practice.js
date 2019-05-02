@@ -34,7 +34,17 @@ let getMinFromArray = nums => {
     return min
 }
 
+function 함수이름 (args) {
+    작동
+    return
+}
 
+const 함수이름 = fucntion (args) {
+    작동
+    return
+}
+
+함수이름()
 
 // console.log(`오늘의 메뉴는 ${pick}입니다.`)
 // console.log(menu[pick])

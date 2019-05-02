@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        img {
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>멍멍이</h1>
+    <button id="createDogImage">Dog!</button>
+    <button id="createCatImage">Cat!</button>
+
+
+    <div class="animals"></div>
+    
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        const getDogImage = function () {
+            axios.get('https://dog.ceo/api/breeds/image/random')
+                .then(response => response.data.message)
+                .then(url => {
+                    const imgTag = document.createElement('img')
+
+                    imgTag.src = url
+
+                    document.querySelector('.animals').append(imgTag)
+
+                })
+                .catch(error => console.log(error))
+
+        }
+
+        const getCatImage = function () {
+            axios.get('https://api.thecatapi.com/v1/images/search')
+                .then(response => response.data[0].url)
+                .then(url => {
+                    const imgTag = document.createElement('img')
+
+                    imgTag.src = url
+
+                    document.querySelector('.animals').append(imgTag)
+
+                })
+                .catch(error => console.log(error))
+
+        }
+
+
+
+        const dogButton = document.querySelector('#createDogImage')
+        const catButton = document.querySelector('#createCatImage')
+
+        dogButton.addEventListener('click', getDogImage)
+        catButton.addEventListener('click', getCatImage)
+
+
+
+    </script>
+</body>
+</html>
