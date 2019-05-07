@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>v-bind</title>
+</head>
+<body>
+    <div id="app">
+        <h1>hello, {{ name }}</h1>
+        <h2>{{ Date() }}</h2>
+        <img v-bind:src="emotion ? happy: sad">
+        <!-- <img :src="happy"> -->
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                name: 'Vue',
+                emotion: true,
+                happy:"http://www.zenithnews.com/news/photo/201706/86605_78258_1243.jpg",
+                sad: "http://pds.egloos.com/pds/1/200508/08/75/c0017175_0174019.jpg"
+            }
+        })
+    </script>
+</body>
+</html>

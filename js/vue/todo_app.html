@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <li v-for="todo in todos" v-if="!todo.completed" v-on:click="check(todo)"> 
+        <!-- <li v-for="todo in todos" v-if="!todo.completed" v-on:click="todo.completed = true">  -->
+            {{ todo.content }}
+        </li>
+        <li v-else v-on:click="check(todo)">
+            <s>{{ todo.content }}</s>
+        </li>
+        <input type="text" v-model="newTodo" v-on:keyup.enter="addTodo">
+        <button @click="addTodo">+</button>
+        <footer>
+
+            <button @click="clearCompleted">Clear</button>
+        </footer>
+    </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        const app = new Vue ({
+            el: '#app',
+            data: {
+                todos: [
+                    {
+                        content : '점심 메뉴 고민',
+                        completed: true,
+                    },
+                    {
+                        content : '사다리 타기',
+                        completed: false,
+                    },
+                    {
+                        content : '야외 수업 하기',
+                        completed: false,
+                    },
+                    {
+                        content : '야자 하기',
+                        completed: false, 
+                    }
+
+                ],
+                newTodo: '',
+            },
+            methods : {
+                check: function (todo) {
+                    todo.completed = !todo.completed
+
+                },
+                addTodo: function () {
+                    this.todos.push({
+                        content: this.newTodo,
+                        completed: false,
+                    })
+                    this.newTodo = ''
+                },
+                clearCompleted: function () {
+                    const notCompletedTodos = this.todos.filter(todo => !todo.completed)
+                    this.todos = notCompletedTodos
+                }
+
+            },
+        })
+    </script>
+</body>
+</html>

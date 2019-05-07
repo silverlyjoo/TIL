@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>v-model</title>
+    <style>
+    img {
+        width: 300px;
+        height: 300px;
+    }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>Hello, {{ name }}</h1>
+        <h2>{{Date()}}</h2>
+        <h3><input type="checkbox" v-model="emotion">누르면 행복해집니다.</h3>
+        <!-- v-model -->
+        <!-- input / select / textarea -->
+        <!-- form 에 관련된 태그에만 사용 될 수 있다. -->
+        <img v-bind:src="emotion ? happy: sad">
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                name: 'ssafy',
+                emotion: true,
+                happy:"http://www.zenithnews.com/news/photo/201706/86605_78258_1243.jpg",
+                sad: "http://pds.egloos.com/pds/1/200508/08/75/c0017175_0174019.jpg"
+            }
+        })
+    </script>
+</body>
+</html>
