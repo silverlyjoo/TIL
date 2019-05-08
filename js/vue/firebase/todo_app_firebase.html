@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+    <script src="https://unpkg.com/vuefire/dist/vuefire.js"></script>
+    
+    <script>
+        const config = {
+            apiKey: "AIzaSyBMXbBy3-ySa5sBzRCOgCxcIGMbI8UcqB8",
+            projectId: "todo-intro",
+            databaseURL: "https://todo-intro.firebaseio.com/",
+        }
+        firebase.initializeApp(config)
+    </script>
+    
+    
+    <style>
+    .completed {
+        text-decoration: line-through;
+        opacity: 0.6;
+    }
+    </style>
+
+
+</head>
+<body>
+    <!-- <div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }"></div> -->
+    <div id="app">
+        <select v-model="status">
+            <option value="all" selected>all</option>
+            <option value="active">active</option>
+            <option value="completed">completed</option>
+        </select>
+        <li v-for="todo in todosByStatus" v-bind:class="{completed: todo.completed}" v-bind:key="todo.id">
+            <input type="checkbox" v-model="todo.completed" @change="updateTodo(todo)">
+            <span>{{ todo.content }}</span>
+        </li>
+        <input type="text" v-model="newTodo" v-on:keyup.enter="addTodo">
+        <button @click="addTodo">+</button>
+        <footer>
+            <button @click="clearCompleted">Clear</button>
+        </footer>
+        <span>{{ reversedNewTodo }}</span>
+    </div>
+
+    <script>
+        const database = firebase.database()
+
+
+
+        const app = new Vue({
+            el: '#app',
+            data: {
+                newTodo: '',
+                activeColor: 'red',
+                fontSize: 30,
+                status: 'all',
+            },
+            firebase: {
+                todos: database.ref('todos'),
+            },
+            methods: {
+                check: function (todo) {
+                    todo.completed = !todo.completed
+                },
+                addTodo: function () {
+                    if (this.newTodo) {
+                    this.$firebaseRefs.todos.push({
+                        id: Date.now(),
+                        content: this.newTodo,
+                        completed: false,
+                    })
+                }
+                    this.newTodo = ''
+                },
+                clearCompleted: function () {
+                    let len= this.todos.length;
+                    for (let i  = len-1; i >= 0; i--) {
+                        let todo = this.todos[i];
+                        if (todo.completed) {
+                            this.$firebaseRefs.todos.child(todo['.key']).remove()
+                        }
+                    }
+
+                    // this.todos.forEach(todo => {
+                    //     if (todo.completed) {
+                    //         this.$firebaseRefs.todos.child(todo['.key']).remove()
+                    //     }
+                    // })
+
+
+                    // // filter 로 false 애들만 필터해서 todos 에 다시 할당.
+                    // const notCompletedTodos = this.todos.filter(todo => !todo.completed)
+                    // this.todos = notCompletedTodos
+                },
+                updateTodo: function (todo) {
+                    const newTodo = { ...todo }
+                    delete newTodo['.key']
+                    this.$firebaseRefs.todos.child(todo['.key']).set(newTodo)
+                },
+            },
+            computed: {
+                todosByStatus: function () {
+                    if (this.status === 'active') {
+                        return this.todos.filter(todo => !todo.completed)
+                    }
+                    if (this.status === 'completed') {
+                        return this.todos.filter(todo => todo.completed)
+                    }
+                    return this.todos
+                },
+
+                reversedNewTodo: function () {
+                    return this.newTodo.split('').reverse().join('')
+                },
+            },
+            watch: {
+                todos: {
+                    handler: function(todos){
+                        todoStorage.save(todos)
+                    },
+                    deep: true,
+                }
+            }
+        })
+    </script>
+</body>
+</html>
