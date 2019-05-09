@@ -16,13 +16,7 @@
 
 - programming language
 
-  > python
-
-  
-
-- algorithm
-
-  > array, string, stack, queue, tree
+  > python, JavaScript
 
 
 
@@ -41,7 +35,10 @@
 
 - framework
 
-  > django, flask
+  > django, flask, Vue.js
 
 
 
+- algorithm
+
+  > array, string, stack, queue, tree, graph
