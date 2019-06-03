@@ -42,3 +42,6 @@
 - algorithm
 
   > array, string, stack, queue, tree, graph
+
+
+- deep learning 
