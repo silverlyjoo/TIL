@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <h1>Hello,
+            <span v-if="gender==='male'">Mr. {{ name }}</span>
+            <span v-else-if="gender==='female'">Miss. {{ name }}</span>
+        </h1>
+
+        <h1 v-else>So you can't decide. Fine!</h1>
+
+        <label for="gender">Enter your gender</label>
+        <input v-model="gender" id="gender"><br>
+        <label for="gender">Enter your name</label>
+        <input v-model="name" id="name">
+        <pre>{{ $data }}</pre>
+    </div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script>
+    let app = new Vue({
+        el: '#app',
+        data: {
+            gender: '',
+            name: ''
+        }
+    })
+</script>
+
+</html>
