@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Animating the 3D Cube with Transitions</title>
+
+<style type="text/css">
+
+	body > div {
+		width: 350px;
+		margin: 50px auto;
+	}
+
+	.container {
+		width: 300px;
+		height: 300px;
+		margin: 60px auto;
+		-webkit-perspective: 1100px;
+		-webkit-perspective-origin: -50% -50%;
+		float: left;
+	}
+
+		.cube {
+			-webkit-transform-style: preserve-3d;
+			-webkit-transform: translateZ(-150px);
+			left: 15%;
+			position: relative;
+			margin: 0;
+			width: 300px;
+			height: 300px;
+			-webkit-transition: 1s;
+		}
+
+			.cube div {
+				width: 298px;
+				height: 188px;
+				background: rgba(0, 0, 0, 0.8);
+				position: absolute;
+				border: 1px solid #fff;
+				text-align: center;
+				padding-top: 110px;
+				color: #fff;
+				font: 3em arial;
+			}
+
+				.front {
+					-webkit-transform: translateZ(150px);
+				}
+
+				.left {
+					-webkit-transform: rotateY(-90deg) translateZ(150px);
+				}
+
+				.right {
+					-webkit-transform: rotateY(90deg) translateZ(150px);
+				}
+
+				.top {
+					-webkit-transform: rotateX(90deg) translateZ(150px);
+				}
+
+				.bottom {
+					-webkit-transform: rotateX(-90deg) translateZ(150px);
+				}
+
+				.back {
+					-webkit-transform: rotateY(180deg) translateZ(150px);
+				}
+
+				label {
+					cursor: pointer;
+					border-radius: 10px;
+					padding: 10px;
+					background: #f5f5f5;
+					float: left;
+					text-align: center;
+					margin-right: 5px;
+				}
+
+				label:hover {
+					background: #eee;
+				}
+
+				input {
+					position: absolute;
+					left: -9999px;
+				}
+
+				input:checked + label {
+					font-weight: bold;
+				}
+
+				input[value="front"]:checked ~ .container .cube {
+					-webkit-transform: translateZ(-150px) rotateY(0);
+				}
+
+				input[value="left"]:checked ~ .container .cube {
+					-webkit-transform: translateZ(-150px) rotateY(90deg);
+				}
+
+				input[value="right"]:checked ~ .container .cube {
+					-webkit-transform: translateZ(-150px) rotateY(-90deg);
+				}
+
+				input[value="top"]:checked ~ .container .cube {
+					-webkit-transform: translateZ(-150px) rotateX(-90deg);
+				}
+
+				input[value="bottom"]:checked ~ .container .cube {
+					-webkit-transform: translateZ(-150px) rotateX(90deg);
+				}
+
+				input[value="back"]:checked ~ .container .cube {
+					-webkit-transform: translateZ(-150px) rotateY(180deg);
+				}
+	
+</style>
+
+</head>
+
+<body>
+
+	<div>
+
+		<input id="front" name="transforms" type="radio" value="front">
+	    <label for="front">Front</label>
+
+		<input id="left" name="transforms" type="radio" value="left">
+	    <label for="left">Left</label>
+
+	    <input id="right" name="transforms" type="radio" value="right">
+	    <label for="right">Right</label>
+
+	    <input id="top" name="transforms" type="radio" value="top">
+	    <label for="top">Top</label>
+
+	    <input id="bottom" name="transforms" type="radio" value="bottom">
+	    <label for="bottom">Bottom</label>
+
+	    <input id="back" name="transforms" type="radio" value="back">
+	    <label for="back">Back</label>
+
+		<div class="container">
+			<figure class="cube">
+				<div class="front">Front</div>
+				<div class="left">Left</div>
+				<div class="right">Right</div>
+				<div class="top">Top</div>
+				<div class="bottom">Bottom</div>
+				<div class="back">Back</div>
+			</figure>
+		</div>
+
+	</div>
+
+</body>
+</html>

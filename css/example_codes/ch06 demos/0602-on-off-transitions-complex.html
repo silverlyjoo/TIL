@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Applying Separate On and Off Transitions (More Complex)</title>
+
+<style type="text/css">
+
+	body > div {
+		width: 300px;
+		margin: 50px auto;
+		position: relative;
+	}
+
+		div div:first-child {
+			background: blue;
+			width: 300px;
+			height: 300px;
+			-webkit-transition: .4s;
+		}
+
+		div div:hover {
+			background: red;
+			-webkit-transform: rotate(360deg);
+			-webkit-transition: background 1s;
+		}
+
+	
+</style>
+
+</head>
+
+<body>
+
+	<div>
+
+		<div>
+		</div>
+
+	</div>
+
+</body>
+</html>

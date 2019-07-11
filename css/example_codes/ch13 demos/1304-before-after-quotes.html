@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Creative Typography with Pseudo-elements</title>
+
+<style type="text/css">
+
+@font-face {
+    font-family: 'Sketch Block';
+    src: url('fonts/sketch_block-webfont.eot');
+    src: url('fonts/sketch_block-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/sketch_block-webfont.woff') format('woff'),
+         url('fonts/sketch_block-webfont.ttf') format('truetype'),
+         url('fonts/sketch_block-webfont.svg#SketchBlockBold') format('svg');
+}
+
+@font-face {
+    font-family: 'Museo 700';
+    src: url('fonts/Museo700-Regular-webfont.eot');
+    src: url('fonts/Museo700-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Museo700-Regular-webfont.woff') format('woff'),
+         url('fonts/Museo700-Regular-webfont.ttf') format('truetype'),
+         url('fonts/Museo700-Regular-webfont.svg#SketchBlockBold') format('svg');
+}
+
+@font-face {
+    font-family: 'CallunaRegular';
+    src: url('fonts/Calluna-Regular-webfont.eot');
+    src: url('fonts/Calluna-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Calluna-Regular-webfont.woff') format('woff'),
+         url('fonts/Calluna-Regular-webfont.ttf') format('truetype'),
+         url('fonts/Calluna-Regular-webfont.svg#CallunaRegular') format('svg');
+}
+
+body {
+	background: #333;
+	color: #fff;
+}
+
+	.container {
+		width: 590px;
+		margin: 140px auto;
+		position: relative;
+	}
+
+	blockquote {
+		width: 565px;
+		font: 2.65em CallunaRegular;
+		letter-spacing: .075em;
+		float: left;
+		padding: 45px 0 30px 25px;
+		margin: 0;
+		border-top: 2px dotted #858585;
+		border-bottom: 2px dotted #858585;
+		-webkit-transform: rotate(-3deg);
+		-moz-transform: rotate(-3deg);
+	}
+
+	.container:before {
+		content: "“";
+		font-size: 13em;
+		position: absolute;
+		left: -100px;
+		color: #666;
+	}
+
+	.container:after {
+		content: "”";
+		font-size: 13em;
+		position: absolute;
+		right: -100px;
+		top: 150px;
+		color: #666;
+	}
+
+		blockquote:first-line {
+			font: 1.85em "Sketch Block";
+			color: #fff79e;
+		}
+
+		blockquote:first-letter {
+			font-size: 2.9em;
+			text-transform: lowercase;
+			float: left;
+			line-height: .52em;
+			margin-right: -18px;
+			position: relative;
+			z-index: 1;
+		}
+
+		blockquote strong:first-child {
+			margin-left: 8px;
+			letter-spacing: 0;
+		}
+
+		blockquote strong:last-child {
+			font: 2em "Museo 700";
+			text-transform: uppercase;
+			letter-spacing: 0;
+		}
+
+		blockquote em {
+			border-bottom: 2px dotted #858585;
+		}
+
+		blockquote + b {
+			float: right;
+			margin-top: 10px;
+			font: 1.6em CallunaRegular;
+			letter-spacing: .15em;
+		}
+
+		blockquote + b:first-letter {
+			color: #fff79e;
+			font-size: 1.3em;
+			font-style: italic;
+			letter-spacing: .25em;
+		}
+
+		@-moz-document url-prefix() { 
+
+			blockquote:first-letter {
+				margin-top: -29px;
+			}
+
+		}
+	
+</style>
+
+</head>
+
+<body>
+
+	<article class="container">
+
+		<blockquote>
+			<strong>Imagination</strong> is <em>more important</em> than <strong>knowledge</strong>
+		</blockquote>
+		<b>Einstein, A.</b>
+
+	</article>
+
+</body>
+</html>

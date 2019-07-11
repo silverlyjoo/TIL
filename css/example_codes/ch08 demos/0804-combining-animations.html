@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Combining Animations</title>
+
+<style type="text/css">
+
+	@-webkit-keyframes slideshow {
+		20% { background: url(01.jpg); }
+		25%, 45% { background: url(02.jpg); }
+		50%, 70% { background: url(03.jpg); }
+		75%, 95% { background: url(04.jpg); }
+	}
+
+	@-webkit-keyframes swing {
+		0% { -webkit-transform: rotateX(-90deg); }
+		30% { -webkit-transform: rotateX(50deg); }
+		50% { -webkit-transform: rotateX(-40deg); }
+		70% { -webkit-transform: rotateX(20deg); }
+		90% { -webkit-transform: rotateX(-10deg); }
+	}
+
+	@-webkit-keyframes fadeInDown {
+		0% {
+			opacity: 0;
+			-webkit-transform: translateY(-20px);
+		}
+	}
+
+	@-webkit-keyframes wobble {
+		15% { -webkit-transform: translateX(-10%) rotate(-5deg); }
+		30% { -webkit-transform: translateX(5%) rotate(3deg); }
+		45% { -webkit-transform: translateX(-5%) rotate(-3deg); }
+		60% { -webkit-transform: translateX(3%) rotate(2deg); }
+		75% { -webkit-transform: translateX(-2%) rotate(-1deg); }
+	}
+
+	.container {
+		width: 960px;
+		height: 300px;
+		margin: 100px auto;
+		-webkit-perspective: 1100px;
+		font-size: 62.5%;
+	}
+
+		.runner {
+			width: 100%;
+			height: 100%;
+			-webkit-animation: slideshow 20s infinite 2s, swing 3s ease-in-out;
+			-webkit-transform-origin-y:  0;
+			background: url(01.jpg);
+		}
+
+			.runner div {
+				background: rgba(250, 250, 250, 0.8);
+				padding: 20px;
+				color: #333;
+				font: 1.3em/1.5em arial;
+				width: 350px;
+				margin: 20px;
+				float: right;
+				-webkit-animation: fadeInDown 1s 2.5s backwards;
+			}
+
+				.runner p:first-child {
+					font-size: 2.2em;
+					font-weight: bold;
+					margin: 0;
+					text-transform: uppercase;
+				}
+
+				.runner .cta {
+					display: block;
+					background: -webkit-linear-gradient(#024a9b, #003065) #024a9b;
+					border-radius: 10px;
+					padding: 15px 20px;
+					width: 200px;
+					color: #fff;
+					text-transform: uppercase;
+					text-decoration: none;
+					font-weight: bold;
+					text-align: center;
+					font-size: 1.2em;
+					margin-top: 20px;
+					-webkit-animation: wobble .75s 3.5s;
+				}
+
+					.runner .cta:hover {
+						opacity: .8;
+					}
+	
+</style>
+
+</head>
+
+<body>
+
+	<div class="container">
+		<section class="runner">
+
+			<div>
+				<p>This is a Headline</p>
+				<p>This is some text This is some text This is some text This is some text This is some text This is some text This is some text  This is some text This is some text This is some text This is some text This is some text This is some text This is some text This is some text This is some text</p>
+				<a class="cta" href="#">Read More</a>
+			</div>
+
+		</section>
+	</div>
+
+</body>
+</html>

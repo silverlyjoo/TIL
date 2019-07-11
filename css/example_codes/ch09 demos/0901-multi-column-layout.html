@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Multi-column Layout</title>
+
+<style type="text/css">
+
+body {
+	font-family:Arial, Helvetica, sans-serif;
+	background: #eee;
+}
+
+	.container {
+		margin:30px auto;
+		width: 100%;
+		max-width: 960px;
+		box-sizing: border-box;
+		-webkit-columns: 3;
+		-webkit-column-gap: 1.8em;
+		-webkit-column-rule: 2px dotted #ccc;
+		background: #fff;
+		padding: 30px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+	}
+
+		h1 {
+			-webkit-column-span: all;
+			border-top: 1px dotted #ccc;
+			border-bottom: 1px dotted #ccc;
+			padding: 10px 0;
+			margin: 0 0 .7em;
+			font: 2.8em Times New Roman;
+			text-transform: uppercase;
+			letter-spacing: 0.1em;
+		}
+
+		h2 {
+			-webkit-column-break-after: avoid; /* Non standard WebKit property, equivalent to standard break-after property */
+			margin-bottom: .5em;
+		}
+
+		p {
+			margin: 0 0 1em;
+			line-height: 1.4em;
+		}
+
+		p:first-of-type:first-letter {
+			font: 4em Times New Roman;
+			border: 1px dotted #ccc;
+			padding: .3em;
+			margin: 0 .2em .2em 0;
+			float: left;
+		}
+
+		blockquote {
+			font: italic 1.2em georgia;
+			margin: 1em 0;
+		}
+
+		blockquote.important {
+			-webkit-column-span: all;
+			border-top: 1px dotted #ccc;
+			border-bottom: 1px dotted #ccc;
+			padding: 10px 0;
+			font-size: 2em;
+			text-align: center;
+		}
+
+		figure {
+			margin: 0 0 1em;
+		}
+
+			img {
+				max-width: 100%;
+			}
+
+			figcaption {
+				font: italic .8em georgia;
+				color: #999;
+			}
+	
+</style>
+
+</head>
+
+<body>
+
+	<article class="container">
+
+		<h1>This is the main headline</h1>
+
+    	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam malesuada turpis volutpat neque pellentesque commodo.</p>
+    	<p>Curabitur accumsan sodales mattis. Praesent quis est nec urna scelerisque ultrices non non justo. Vivamus consectetur odio porttitor enim fermentum ullamcorper eu nec augue.</p>
+    	<p>Integer luctus imperdiet odio, eu bibendum nulla eleifend quis. Vivamus dignissim ligula id ante aliquam a blandit quam bibendum.</p>
+
+    	<h2>This is a sub heading</h2>
+
+    	<p>Etiam eu elit quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+    	<blockquote>"This is a quote by a famous and influential chap"</blockquote>
+    	<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+    	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam malesuada turpis volutpat neque.</p>
+    	<p>Donec tincidunt, orci a feugiat pellentesque, dui diam pharetra orci.</p>
+    	<figure>
+	    	<img src="thirsty-wasp.jpg" alt="Thirsty Wasp">
+	    	<figcaption>This little guy likes his beer!</figcaption>
+	    </figure>
+    	<p>Nunc ante libero, consectetur a tincidunt at, sagittis ac ligula.</p>
+
+    	<blockquote class="important">&quot;This is a quote of particular interest&quot;</blockquote>
+
+    	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam malesuada turpis volutpat neque pellentesque commodo.</p>
+    	<figure>
+	    	<img src="sharon-sheep.jpg" alt="Sharon the Sheep">
+	    	<figcaption>Hi, I'm Sharon! How do ewe do?</figcaption>
+	    </figure>
+    	<p>Curabitur accumsan sodales mattis. Praesent quis est nec urna scelerisque ultrices non non justo. Vivamus consectetur odio porttitor enim fermentum ullamcorper eu nec augue.</p>
+
+    	<h2>Another sub heading</h2>
+    	<p>Integer luctus imperdiet odio, eu bibendum nulla eleifend quis vivamus dignissim ligula id ante aliquam.</p>
+    	<p>Donec tincidunt, orci a feugiat pellentesque, dui diam pharetra orci, a tincidunt justo lacus in eros.</p>
+    	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam malesuada turpis volutpat neque pellentesque commodo.</p>
+    	<p>Curabitur accumsan sodales mattis. Praesent quis est nec urna scelerisque ultrices non non justo. Vivamus consectetur odio porttitor enim fermentum ullamcorper eu nec augue.</p>
+    	<p>Integer luctus imperdiet odio, eu bibendum nulla eleifend quis. Vivamus dignissim ligula id ante aliquam a blandit quam bibendum.</p>
+    	<p>Donec tincidunt, orci a feugiat pellentesque, dui diam pharetra orci, a tincidunt justo lacus in eros.</p>
+
+    </article>
+
+</body>
+</html>

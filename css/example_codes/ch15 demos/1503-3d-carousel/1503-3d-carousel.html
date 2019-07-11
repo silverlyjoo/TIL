@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>3D Carousel Using Only CSS3</title>
+
+<style type="text/css">
+
+	body > div {
+		width: 500px;
+		margin: 50px auto;
+		text-align: center;
+	}
+
+	figure {
+		margin: 0;
+	}
+
+	ul {
+		padding: 0;
+		list-style: none;
+	}
+
+	.container {
+		width: 500px;
+		height: 300px;
+		text-align: left;
+		margin: 60px auto;
+		-webkit-perspective: 1000px;
+		-webkit-perspective-origin-y: -25%;
+	}
+
+		.carousel {
+			-webkit-transform-style: preserve-3d;
+			-webkit-transform: translateZ(-540px);
+			position: relative;
+			margin: 0;
+			width: 500px;
+			height: 300px;
+			-webkit-transition: 1s;
+		}
+
+			.carousel img {
+				position: absolute;
+				border: 15px solid rgba(0, 0, 0, .8);
+				opacity: .5;
+				-webkit-transition: 1s;
+			}
+
+				
+				.carousel li:nth-child(1) img { -webkit-transform: translateZ(540px) scale(.8); }
+				.carousel li:nth-child(2) img { -webkit-transform: rotateY(45deg) translateZ(540px) scale(.8); }
+				.carousel li:nth-child(3) img { -webkit-transform: rotateY(90deg) translateZ(540px) scale(.8); }
+				.carousel li:nth-child(4) img { -webkit-transform: rotateY(135deg) translateZ(540px) scale(.8); }
+				.carousel li:nth-child(5) img { -webkit-transform: rotateY(180deg) translateZ(540px) scale(.8); }
+				.carousel li:nth-child(6) img { -webkit-transform: rotateY(225deg) translateZ(540px) scale(.8); }
+				.carousel li:nth-child(7) img { -webkit-transform: rotateY(270deg) translateZ(540px) scale(.8); }
+				.carousel li:nth-child(8) img { -webkit-transform: rotateY(315deg) translateZ(540px) scale(.8); }
+
+	label {
+		cursor: pointer;
+		background: #eee;
+		display: inline-block;
+		border-radius: 50%;
+		width: 30px;
+		padding-top: 7px;
+		height: 23px;
+		font: .9em Arial;
+	}
+
+	label:hover {
+		background: #ddd;
+	}
+
+	input {
+		position: absolute;
+		left: -9999px;
+	}
+
+	input:checked + label {
+		font-weight: bold;
+		background: #ddd;
+	}
+
+		input[value="2"]:checked ~ .container .carousel { -webkit-transform: translateZ(-540px) rotateY(-45deg); }
+		input[value="3"]:checked ~ .container .carousel { -webkit-transform: translateZ(-540px) rotateY(-90deg); }
+		input[value="4"]:checked ~ .container .carousel { -webkit-transform: translateZ(-540px) rotateY(-135deg); }
+		input[value="5"]:checked ~ .container .carousel { -webkit-transform: translateZ(-540px) rotateY(-180deg); }
+		input[value="6"]:checked ~ .container .carousel { -webkit-transform: translateZ(-540px) rotateY(-225deg); }
+		input[value="7"]:checked ~ .container .carousel { -webkit-transform: translateZ(-540px) rotateY(-270deg); }
+		input[value="8"]:checked ~ .container .carousel { -webkit-transform: translateZ(-540px) rotateY(-315deg); }
+
+		input[value="1"]:checked ~ .container .carousel li:nth-child(1) img { -webkit-transform: translateZ(540px) scale(1); opacity: 1; }
+		input[value="2"]:checked ~ .container .carousel li:nth-child(2) img { -webkit-transform: rotateY(45deg) translateZ(540px) scale(1); opacity: 1; }
+		input[value="3"]:checked ~ .container .carousel li:nth-child(3) img { -webkit-transform: rotateY(90deg) translateZ(540px) scale(1); opacity: 1; }
+		input[value="4"]:checked ~ .container .carousel li:nth-child(4) img { -webkit-transform: rotateY(135deg) translateZ(540px) scale(1); opacity: 1; }
+		input[value="5"]:checked ~ .container .carousel li:nth-child(5) img { -webkit-transform: rotateY(180deg) translateZ(540px) scale(1); opacity: 1; }
+		input[value="6"]:checked ~ .container .carousel li:nth-child(6) img { -webkit-transform: rotateY(225deg) translateZ(540px) scale(1); opacity: 1; }
+		input[value="7"]:checked ~ .container .carousel li:nth-child(7) img { -webkit-transform: rotateY(270deg) translateZ(540px) scale(1); opacity: 1; }
+		input[value="8"]:checked ~ .container .carousel li:nth-child(8) img { -webkit-transform: rotateY(315deg) translateZ(540px) scale(1); opacity: 1; }
+	
+</style>
+
+</head>
+
+<body>
+
+	<div>
+
+		<input checked id="one" name="carousel" type="radio" value="1">
+        <label for="one">1</label>
+
+		<input id="two" name="carousel" type="radio" value="2">
+        <label for="two">2</label>
+
+        <input id="three" name="carousel" type="radio" value="3">
+        <label for="three">3</label>
+
+        <input id="four" name="carousel" type="radio" value="4">
+        <label for="four">4</label>
+
+        <input id="five" name="carousel" type="radio" value="5">
+        <label for="five">5</label>
+
+        <input id="six" name="carousel" type="radio" value="6">
+        <label for="six">6</label>
+
+        <input id="seven" name="carousel" type="radio" value="7">
+        <label for="seven">7</label>
+
+        <input id="eight" name="carousel" type="radio" value="8">
+        <label for="eight">8</label>
+
+		<div class="container">
+			<ul class="carousel">
+				<li><img src="images/1.jpg" alt="Landscape 1"></li>
+				<li><img src="images/2.jpg" alt="Landscape 2"></li>
+				<li><img src="images/3.jpg" alt="Landscape 3"></li>
+				<li><img src="images/4.jpg" alt="Landscape 4"></li>
+				<li><img src="images/5.jpg" alt="Landscape 5"></li>
+				<li><img src="images/6.jpg" alt="Landscape 6"></li>
+				<li><img src="images/7.jpg" alt="Landscape 7"></li>
+				<li><img src="images/8.jpg" alt="Landscape 8"></li>
+			</ul>
+		</div>
+
+	</div>
+
+</body>
+</html>

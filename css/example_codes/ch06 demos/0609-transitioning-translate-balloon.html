@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Transitioning Translate: Floating Balloon</title>
+
+<style type="text/css">
+
+	body > div {
+		width: 600px;
+		margin: 50px auto;
+		position: relative;
+	}
+
+		a {
+			padding: 5px 10px;
+			background: blue;
+			color: #fff;
+			border-radius: 8px;
+			text-decoration: none;
+		}
+
+			a:hover {
+				opacity: 0.6;
+			}
+
+		div div:first-of-type {
+			border-radius: 60% 60% 55% 55%;
+			width: 150px;
+			height: 210px;
+			margin-top: 30px;
+			background: -webkit-radial-gradient(40% 20%, #acd9fc 10%, #0090ff 50%, #002f53 90%);
+			-webkit-transform: translate(0, 300px) rotate(-50deg);
+			-webkit-transition: 3s cubic-bezier(.65, 2, .03, .32);
+			z-index: 2;
+			position: relative;
+		}
+
+			div div:first-of-type:after {
+				display: block;
+				content: "";
+				width: 0;
+				height: 0;
+				border-left: 10px solid transparent;
+				border-right: 10px solid transparent;
+				border-bottom: 10px solid #002f53;
+				position: absolute;
+				bottom: -8px;
+				right: 62px;
+			}
+
+			div div:first-of-type + div {
+				width: 200px;
+				height: 40px;
+				background: -webkit-radial-gradient(#333 5%, #999 30%, #fff 70%);
+				border-radius: 50%;
+				margin-top: -208px;
+				-webkit-transform: translate(0, 476px) scale(1);
+				-webkit-transition: 4s cubic-bezier(.65, 2, .03, .32);
+				z-index: 1;
+				position: relative;
+			}
+
+				div div:first-of-type:target + div {
+					-webkit-transform: translate(0, 476px) scale(1.5, 1);
+					opacity: 0;
+				}
+
+			div div:first-of-type:target {
+				-webkit-transition: 3s cubic-bezier(.65, 2, .03, .32);
+				-webkit-transform: translate(0) rotate(0deg);
+			}
+
+	
+</style>
+
+</head>
+
+<body>
+
+	<div>
+
+		<a href="#float">Add Helium</a> <a href="#reset">Remove Helium</a>
+
+		<div id="float"></div>
+		<div></div>
+
+	</div>
+
+</body>
+</html>

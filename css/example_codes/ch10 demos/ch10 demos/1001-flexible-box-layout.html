@@ -1,0 +1,276 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Flexible Box Layout</title>
+
+<style type="text/css">
+
+body {
+	font: 75% Arial, Helvetica, sans-serif;
+	margin: 0;
+}
+
+	.container {
+		width: 960px;
+		padding: 0 10px;
+		box-sizing: border-box;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+	}
+
+		.container > * {
+			display: flex;
+		}
+
+		header {
+			align-items: center;
+			justify-content: space-between;
+			margin: 20px 0 10px;
+		}
+
+			header .logo {
+				font-size: 2.2em;
+				background: #eee;
+				min-width: 220px;
+				padding: 10px;
+				border-radius: 10px;
+				font-weight: bold;
+				text-transform: uppercase;
+				margin: 0 10px 10px 0;
+			}
+
+			.nav-btn {
+				background: #333;
+				border-radius: 10px;
+				border: none;
+				padding: 15px;
+				color: #fff;
+				text-align: center;
+				cursor: pointer;
+				display: none;
+				margin-bottom: 10px;
+			}
+
+				.nav-btn:hover {
+					background: #444;
+				}
+
+			nav ul {
+				list-style: none;
+				padding: 0;
+				display: flex;
+				justify-content: flex-end;
+				align-items: center;
+				margin: 0 0 10px;
+			}
+
+				nav li {
+					padding: 0 13px;
+					font-size: 1.2em;
+					text-align: center;
+				}
+
+					nav a {
+						text-decoration: none;
+					}
+
+		.runner {
+			background: url(images/runner.jpg) no-repeat;
+			margin-bottom: 20px;
+		}
+
+			.runner div {
+				background: rgba(250, 250, 250, .8);
+				width: 300px;
+				margin: 20px;
+				padding: 20px;
+				font-size: 1.3em;
+			}
+
+			.runner h2 {
+				margin: 0;
+			}
+
+			.runner div a {
+				text-decoration: none;
+				background: #0b5fa7;
+				color: #fff;
+				padding: 5px;
+				border-radius: 5px;
+				display: inline-block;
+			}
+
+		.buckets {
+			justify-content: space-between;
+			margin-bottom: 20px;
+		}
+
+			.buckets div {
+				width: 220px;
+			}
+
+				.buckets h2 {
+					margin: 0;
+				}
+
+				.buckets img {
+					width: 100%;
+				}
+
+		.main {
+			margin-bottom: 20px;
+		}
+
+			.content {
+				margin: 0 20px;
+				flex: 6;
+			}
+
+				h1 {
+					margin-top: 0;
+				}
+
+			.sidebar-right {
+				flex: 2;
+				display: flex;
+				justify-content: space-between;
+				align-content: flex-start;
+				flex-flow: wrap;
+			}
+
+				.sidebar-right article {
+					display: flex;
+					flex-flow: column;
+					width: 100%;
+					margin-bottom: 30px;
+				}
+
+					.sidebar-right h3 {
+						margin: 0;
+					}
+
+					.sidebar-right div {
+						height: 50px;
+						background: #ccc;
+						margin: 5px 0;
+					}
+
+			.sidebar-left {
+				flex: 1;
+				order: -1;
+			}
+
+				.sidebar-left img {
+					margin-bottom: 10px;
+					width: 100%;
+				}
+
+		footer {
+			height: 150px;
+			margin-bottom: 20px;
+			background: #ccc;
+		}
+	
+</style>
+
+</head>
+
+<body>
+
+	<div class="container">
+
+		<header>
+			<p class="logo">Company Logo</p>
+
+			<nav>
+				<ul>
+					<li><a href="">Home</a></li>
+					<li><a href="">Another Link</a></li>
+					<li><a href="">Another Link</a></li>
+					<li><a href="">Another Link</a></li>
+					<li><a href="">Another Link</a></li>
+					<li><a href="">Contact</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<section class="runner">
+			<div>
+				<h2>A Heading</h2>
+				<p>Pellentesque habitant morbi tristique senectus et dolor sit amet consectetur adipiscing netus et malesuada fames ac turpis egestas.</p>
+				<a href="#">Read More</a>
+			</div>
+		</section>
+
+		<section class="buckets">
+			<div>
+				<h2>A Bucket Heading</h2>
+				<img src="images/1.jpg" alt="">
+				<p>Lorem ipsum dolor sit amet consectetur adipiscing. <a href="">Read More</a></p>
+			</div>
+			<div>
+				<h2>A Bucket Heading</h2>
+				<img src="images/2.jpg" alt="">
+				<p>Lorem ipsum dolor sit amet consectetur adipiscing. <a href="">Read More</a></p>
+			</div>
+			<div>
+				<h2>A Bucket Heading</h2>
+				<img src="images/3.jpg" alt="">
+				<p>Lorem ipsum dolor sit amet consectetur adipiscing. <a href="">Read More</a></p>
+			</div>
+			<div>
+				<h2>A Bucket Heading</h2>
+				<img src="images/4.jpg" alt="">
+				<p>Lorem ipsum dolor sit amet consectetur adipiscing. <a href="">Read More</a></p>
+			</div>
+		</section>
+
+		<section class="main">
+
+			<article class="content">
+				<h1>Welcome to a very flexible website!</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam malesuada turpis volutpat neque pellentesque commodo.</p>
+		    	<p>Curabitur accumsan sodales mattis. Praesent quis est nec urna scelerisque ultrices non non justo. Vivamus consectetur odio porttitor enim fermentum ullamcorper eu nec augue.</p>
+		    	<p>Integer luctus imperdiet odio, eu bibendum nulla eleifend quis. Vivamus dignissim ligula id ante aliquam a blandit quam bibendum.</p>
+		    	<p>Etiam eu elit quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+		    	<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+		    	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam malesuada turpis volutpat neque.</p>
+		    	<p>Donec tincidunt, orci a feugiat pellentesque, dui diam pharetra orci.</p>
+			</article>
+
+			<aside class="sidebar-left">
+				<img src="images/a.jpg" alt="An Image">
+				<img src="images/b.jpg" alt="An Image">
+				<img src="images/c.jpg" alt="An Image">
+				<img src="images/d.jpg" alt="An Image">
+			</aside>
+
+			<aside class="sidebar-right">
+				<article>
+					<h3>A Blog Post</h3>
+					<div></div>
+					<a href="">Read More&hellip;</a>
+				</article>
+				<article>
+					<h3>A Blog Post</h3>
+					<div></div>
+					<a href="">Read More&hellip;</a>
+				</article>
+				<article>
+					<h3>A Blog Post</h3>
+					<div></div>
+					<a href="">Read More&hellip;</a>
+				</article>
+			</aside>
+
+		</section>
+
+		<footer>
+		</footer>
+
+	</div>
+
+</body>
+</html>
