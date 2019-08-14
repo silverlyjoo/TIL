@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Transform Origin</title>
+
+<style type="text/css">
+
+	body {
+		font: 1em Arial;
+	}
+
+		body > div {
+			width: 400px;
+			margin: 0 auto;
+		}
+
+			article {
+				width: 400px;
+				margin-top: 30px;
+				float: left;
+				position: relative;
+			}
+
+				article div {
+					width: 120px;
+					height: 50px;
+					background: #ccc;
+					float: left;
+					margin: 0 5px 5px 0;
+					text-align: center;
+					padding-top: 30px;
+				}
+
+				article:first-child div:nth-child(2) {
+				    -webkit-transform: scale(1.4);
+				    -webkit-transform-origin: 50% 50%; /* This is the default central value */
+				    background: blue;
+				    color: #fff;
+				    opacity: 0.8;
+				}
+
+				article:nth-child(2) div:nth-child(2) {
+				    -webkit-transform: scale(1.4);
+				    -webkit-transform-origin: 20% 20%;
+				    background: blue;
+				    color: #fff;
+				    opacity: 0.8;
+				}
+				
+				article:last-child div:nth-child(2) {
+				    -webkit-transform: rotate(45deg);
+				    -webkit-transform-origin: top left;
+				    background: blue;
+				    color: #fff;
+				    opacity: 0.8;
+				}
+	
+</style>
+
+</head>
+
+<body>
+
+	<div>
+
+		<article>
+		    <div>Box 1</div>
+		    <div>Box 2</div>
+		    <div>Box 3</div>
+		    <div>Box 4</div>
+		    <div>Box 5</div>
+		    <div>Box 6</div>
+		</article>
+
+		<article>
+		    <div>Box 1</div>
+		    <div>Box 2</div>
+		    <div>Box 3</div>
+		    <div>Box 4</div>
+		    <div>Box 5</div>
+		    <div>Box 6</div>
+		</article>
+
+		<article>
+		    <div>Box 1</div>
+		    <div>Box 2</div>
+		    <div>Box 3</div>
+		    <div>Box 4</div>
+		    <div>Box 5</div>
+		    <div>Box 6</div>
+		</article>
+
+	</div>
+
+</body>
+</html>

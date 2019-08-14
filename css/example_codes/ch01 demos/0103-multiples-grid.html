@@ -1,0 +1,356 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Finding Multiples with Advanced CSS Selectors</title>
+
+<style type="text/css">
+
+	body {
+		margin: 0;
+		font: 90% Arial;
+	}
+
+	header {
+		display: block;
+		width: 100%;
+		float: left;
+		background: #222;
+		margin-bottom: 20px;
+	}
+
+		h1 {
+			font-size: 2em;
+			border-top: 1px dashed #444;
+			border-bottom: 1px dashed #444;
+			text-transform: uppercase;
+			margin: 40px 0 30px;
+			padding: 10px 0;
+			text-align: center;
+			color: #fff;
+		}
+
+	.container {
+		float: left;
+		width: 100%;
+	}
+
+	article {
+		display: block;
+		width: 700px;
+		margin: 0 auto;
+	}
+
+	h2 {
+		font: bold 1em Arial;
+		text-transform: uppercase;
+		background: #333;
+		color: #fff;
+		padding: 5px;
+		border-radius: 5px;
+	}
+
+	ol {
+		color: #fff;
+		font: 1em Arial;
+		float: left;
+		list-style: none;
+		margin: 30px auto 50px;
+		padding: 10px;
+		border: 1px dashed #999;
+		border-radius: 10px;
+	}
+
+	ol li {
+		background: #666;
+		padding: 1%;
+		box-sizing: border-box;
+		float: left;
+		width: 7.32%;
+		height: 32px;
+		margin: 0 1.1% 1.1% 0;
+		text-align: center;
+		font-weight: bold;
+		-webkit-transition: all 1s ease;
+	}
+
+	ol li:hover {
+		background: #444;
+	}
+
+	label {
+		cursor: pointer;
+		background: -webkit-linear-gradient(top, #eee 0%, #ccc 100%);
+		border: 1px solid #bbb;
+		border-radius: 5px;
+		padding: 5px 15px;
+	}
+
+	label:hover {
+		background: -webkit-linear-gradient(top, #fff 0%, #ccc 100%);
+	}
+
+	input {
+		position: absolute;
+		left: -9999px;
+	}
+
+	input:checked + label {
+		font-weight: bold;
+		background: -webkit-linear-gradient(top, #fff 0%, #ccc 100%);
+	}
+
+	input:checked ~ ol li {
+		opacity:0.3;
+		-webkit-transform: scale(0.7);
+	}
+
+	input[value="2"]:checked ~ ol li:nth-child(2n),
+	input[value="3"]:checked ~ ol li:nth-child(3n),
+	input[value="4"]:checked ~ ol li:nth-child(4n),
+	input[value="5"]:checked ~ ol li:nth-child(5n),
+	input[value="6"]:checked ~ ol li:nth-child(6n),
+	input[value="7"]:checked ~ ol li:nth-child(7n),
+	input[value="8"]:checked ~ ol li:nth-child(8n),
+	input[value="9"]:checked ~ ol li:nth-child(9n),
+	input[value="10"]:checked ~ ol li:nth-child(10n),
+	input[value="11"]:checked ~ ol li:nth-child(11n),
+	input[value="12"]:checked ~ ol li:nth-child(12n) {
+		background: #333;
+		opacity: 1;
+		-webkit-transform: scale(1);
+	}
+
+	input[value="2"]:hover ~ ol li:nth-child(2n),
+	input[value="3"]:hover ~ ol li:nth-child(3n),
+	input[value="4"]:hover ~ ol li:nth-child(4n),
+	input[value="5"]:hover ~ ol li:nth-child(5n),
+	input[value="6"]:hover ~ ol li:nth-child(6n),
+	input[value="7"]:hover ~ ol li:nth-child(7n),
+	input[value="8"]:hover ~ ol li:nth-child(8n),
+	input[value="9"]:hover ~ ol li:nth-child(9n),
+	input[value="10"]:hover ~ ol li:nth-child(10n),
+	input[value="11"]:hover ~ ol li:nth-child(11n),
+	input[value="12"]:hover ~ ol li:nth-child(12n) {
+		background: #444;
+	}
+
+	input[value="reset"]:checked ~ ol li {
+		background: #666;
+		opacity: 1;
+		-webkit-transform: scale(1);
+	}
+
+	ol li:nth-child(12n) {
+		margin-right: 0;
+	}
+
+	ol li:nth-last-child(-n+12) {
+		margin-bottom: 0;
+	}
+	
+</style>
+
+</head>
+
+<body>
+
+	<header>
+		<h1>Finding Multiples with Advanced CSS Selectors</h1>
+	</header>
+
+	<div class="container">
+
+		<article>
+
+	        <h2>Find Multiples of&hellip;</h2>
+
+	        <input id="two" name="multiples" type="radio" value="2">
+	        <label for="two">2</label>
+
+	        <input id="three" name="multiples" type="radio" value="3">
+	        <label for="three">3</label>
+
+	        <input id="four" name="multiples" type="radio" value="4">
+	        <label for="four">4</label>
+
+	        <input id="five" name="multiples" type="radio" value="5">
+	        <label for="five">5</label>
+
+	        <input id="six" name="multiples" type="radio" value="6">
+	        <label for="six">6</label>
+
+	        <input id="seven" name="multiples" type="radio" value="7">
+	        <label for="seven">7</label>
+
+	        <input id="eight" name="multiples" type="radio" value="8">
+	        <label for="eight">8</label>
+
+	        <input id="nine" name="multiples" type="radio" value="9">
+	        <label for="nine">9</label>
+
+	        <input id="ten" name="multiples" type="radio" value="10">
+	        <label for="ten">10</label>
+
+	        <input id="eleven" name="multiples" type="radio" value="11">
+	        <label for="eleven">11</label>
+
+	        <input id="twelve" name="multiples" type="radio" value="12">
+	        <label for="twelve">12</label>
+
+	        <input id="reset" name="multiples" type="radio" value="reset">
+	        <label for="reset">Reset</label>
+
+			<ol>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+				<li>6</li>
+				<li>7</li>
+				<li>8</li>
+				<li>9</li>
+				<li>10</li>
+				<li>11</li>
+				<li>12</li>
+				<li>13</li>
+				<li>14</li>
+				<li>15</li>
+				<li>16</li>
+				<li>17</li>
+				<li>18</li>
+				<li>19</li>
+				<li>20</li>
+				<li>21</li>
+				<li>22</li>
+				<li>23</li>
+				<li>24</li>
+				<li>25</li>
+				<li>26</li>
+				<li>27</li>
+				<li>28</li>
+				<li>29</li>
+				<li>30</li>
+				<li>31</li>
+				<li>32</li>
+				<li>33</li>
+				<li>34</li>
+				<li>35</li>
+				<li>36</li>
+				<li>37</li>
+				<li>38</li>
+				<li>39</li>
+				<li>40</li>
+				<li>41</li>
+				<li>42</li>
+				<li>43</li>
+				<li>44</li>
+				<li>45</li>
+				<li>46</li>
+				<li>47</li>
+				<li>48</li>
+				<li>49</li>
+				<li>50</li>
+				<li>51</li>
+				<li>52</li>
+				<li>53</li>
+				<li>54</li>
+				<li>55</li>
+				<li>56</li>
+				<li>57</li>
+				<li>58</li>
+				<li>59</li>
+				<li>60</li>
+				<li>61</li>
+				<li>62</li>
+				<li>63</li>
+				<li>64</li>
+				<li>65</li>
+				<li>66</li>
+				<li>67</li>
+				<li>68</li>
+				<li>69</li>
+				<li>70</li>
+				<li>71</li>
+				<li>72</li>
+				<li>73</li>
+				<li>74</li>
+				<li>75</li>
+				<li>76</li>
+				<li>77</li>
+				<li>78</li>
+				<li>79</li>
+				<li>80</li>
+				<li>81</li>
+				<li>82</li>
+				<li>83</li>
+				<li>84</li>
+				<li>85</li>
+				<li>86</li>
+				<li>87</li>
+				<li>88</li>
+				<li>89</li>
+				<li>90</li>
+				<li>91</li>
+				<li>92</li>
+				<li>93</li>
+				<li>94</li>
+				<li>95</li>
+				<li>96</li>
+				<li>97</li>
+				<li>98</li>
+				<li>99</li>
+				<li>100</li>
+				<li>101</li>
+				<li>102</li>
+				<li>103</li>
+				<li>104</li>
+				<li>105</li>
+				<li>106</li>
+				<li>107</li>
+				<li>108</li>
+				<li>109</li>
+				<li>110</li>
+				<li>111</li>
+				<li>112</li>
+				<li>113</li>
+				<li>114</li>
+				<li>115</li>
+				<li>116</li>
+				<li>117</li>
+				<li>118</li>
+				<li>119</li>
+				<li>120</li>
+				<li>121</li>
+				<li>122</li>
+				<li>123</li>
+				<li>124</li>
+				<li>125</li>
+				<li>126</li>
+				<li>127</li>
+				<li>128</li>
+				<li>129</li>
+				<li>130</li>
+				<li>131</li>
+				<li>132</li>
+				<li>133</li>
+				<li>134</li>
+				<li>135</li>
+				<li>136</li>
+				<li>137</li>
+				<li>138</li>
+				<li>139</li>
+				<li>140</li>
+				<li>141</li>
+				<li>142</li>
+				<li>143</li>
+				<li>144</li>
+			</ol>
+
+		</article>
+
+	</div>
+
+</body>
+</html>

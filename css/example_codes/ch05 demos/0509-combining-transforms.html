@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Combining Transform Functions</title>
+
+<style type="text/css">
+
+	body {
+		font: 1em Arial;
+	}
+
+		body > div {
+			width: 500px;
+			margin: 50px auto 0;
+		}
+
+			article {
+				width: 350px;
+				margin-top: 20px;
+				float: left;
+			}
+
+				article div {
+					width: 120px;
+					height: 50px;
+					background: #ccc;
+					float: left;
+					margin: 0 5px 5px 0;
+					text-align: center;
+					padding-top: 30px;
+				}
+
+				label {
+					cursor: pointer;
+					border-radius: 50%;
+					padding: 10px;
+					background: #f5f5f5;
+					width: 15px;
+					height: 15px;
+					float: left;
+					text-align: center;
+					margin-right: 5px;
+				}
+
+				label:hover {
+					background: #eee;
+				}
+
+				input {
+					position: absolute;
+					left: -9999px;
+				}
+
+				input:checked + label {
+					font-weight: bold;
+				}
+
+				input:checked ~ ol li {
+					opacity:0.3;
+					-webkit-transform: scale(0.7);
+				}
+
+				input:checked ~ article div {
+					-webkit-transform-origin: 0 0;
+				}
+
+				input[value="1"]:checked ~ article div:first-child {
+					-webkit-transform: translate(260px, 0) scale(3.13);
+				}
+
+				input[value="2"]:checked ~ article div:nth-child(2) {
+					-webkit-transform: translate(135px, 0) scale(3.13);
+				}
+
+				input[value="3"]:checked ~ article div:nth-child(3) {
+					-webkit-transform: translate(260px, -85px) scale(3.13);
+				}
+
+				input[value="4"]:checked ~ article div:nth-child(4) {
+					-webkit-transform: translate(135px, -85px) scale(3.13);
+				}
+
+				input[value="5"]:checked ~ article div:nth-child(5) {
+					-webkit-transform: translate(260px, -170px) scale(3.13);
+				}
+
+				input[value="6"]:checked ~ article div:last-child {
+					-webkit-transform: translate(135px, -170px) scale(3.13);
+				}
+	
+</style>
+
+</head>
+
+<body>
+
+	<div>
+
+		<input id="one" name="transforms" type="radio" value="1">
+        <label for="one">1</label>
+
+		<input id="two" name="transforms" type="radio" value="2">
+        <label for="two">2</label>
+
+        <input id="three" name="transforms" type="radio" value="3">
+        <label for="three">3</label>
+
+        <input id="four" name="transforms" type="radio" value="4">
+        <label for="four">4</label>
+
+        <input id="five" name="transforms" type="radio" value="5">
+        <label for="five">5</label>
+
+        <input id="six" name="transforms" type="radio" value="6">
+        <label for="six">6</label>
+
+		<article>
+		    <div>Box 1</div>
+		    <div>Box 2</div>
+		    <div>Box 3</div>
+		    <div>Box 4</div>
+		    <div>Box 5</div>
+		    <div>Box 6</div>
+		</article>
+
+	</div>
+
+</body>
+</html>

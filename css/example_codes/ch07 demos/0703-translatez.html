@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Translating along the z-axis</title>
+
+<style type="text/css">
+
+	body > div {
+		width: 400px;
+		margin: 50px auto;
+		position: relative;
+		-webkit-perspective: 500px;
+		
+	}
+
+		div div {
+			background: blue;
+			width: 300px;
+			height: 300px;
+			margin: 50px auto;
+			-webkit-transition: 1s;
+		}
+
+		div:target {
+			-webkit-transform: translateZ(100px);
+		}
+
+		a {
+			font: 1.2em arial;
+		}
+
+	
+</style>
+
+</head>
+
+<body>
+
+	<div>
+
+		<a href="#translate">Click to translate 100px along the z-axis</a> | <a href="#reset">Reset</a>
+
+		<div id="translate">
+		</div>
+
+	</div>
+
+</body>
+</html>

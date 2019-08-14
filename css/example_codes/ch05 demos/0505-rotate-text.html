@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Transform Rotate Text</title>
+
+<style type="text/css">
+
+body > div {
+	width: 152px;
+	margin: 100px auto 0;
+}
+
+	time {
+		float: left;
+		background: #eee;
+		position: relative;
+		width: 152px;
+		height: 145px;
+		border: 3px dotted #999;
+	}
+
+		time span {
+			position: absolute;
+			float: left;
+			-webkit-transform-origin: 0 0;
+		}
+
+		time span:first-child {
+			-webkit-transform: rotate(-90deg);
+			left: 10px;
+			top: 132px;
+			font: 0.9em Times;
+			text-transform: uppercase;
+			letter-spacing: 0.34em;
+		}
+
+		time span:nth-child(2) {
+			font: 6em/1em bebas;
+			left: 30px;
+			top: 0;
+		}
+
+		time span:nth-child(3) {
+			display: block;
+			left: 35px;
+			top: 96px;
+			text-transform: uppercase;
+			font: 2em bebas;
+			letter-spacing: 0.6em;
+		}
+
+		time span:last-child {
+			-webkit-transform: rotate(90deg);
+			left: 145px;
+			top: 103px;
+		}
+	
+</style>
+
+</head>
+
+<body>
+
+	<div>
+
+		<div>
+			<time datetime="2013-02-06"><span>Wednesday</span> <span>06</span> <span>Feb</span> <span>2013</span></time>
+		</div>
+
+	</div>
+
+</body>
+</html>

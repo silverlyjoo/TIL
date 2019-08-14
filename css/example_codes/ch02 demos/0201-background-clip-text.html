@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Masking Background Images Over Text</title>
+
+<style type="text/css">
+
+	article {
+		display: block;
+		width: 960px;
+		margin: 0 auto;
+		text-align: center;
+		padding-top: 0px;
+	}
+	
+	h1 {
+		font: bold 5.8em Bebas, Arial;
+		margin: 0.4em;
+    	background: url(bg.jpg) center;
+    	-webkit-background-clip: text;
+    	-webkit-text-fill-color: transparent;
+    	text-transform: uppercase;
+	}
+	
+</style>
+
+</head>
+
+<body>
+
+	<article>
+    	
+        <h1>The Big Headline</h1>
+
+        <img src="bg.jpg" alt="Background">
+
+	</article>
+
+</body>
+</html>

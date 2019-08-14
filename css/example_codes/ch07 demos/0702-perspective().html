@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>The Perspective Function and the Perspective Property</title>
+
+<style type="text/css">
+
+	body > div {
+		width: 960px;
+		margin: 0 auto;
+		
+	}
+
+		body > div > div {
+			background: rgba(0, 0, 255, 0.2);
+			width: 450px;
+			height: 320px;
+			float: left;
+			border: 1px solid #999;
+			margin-top: 80px;
+		}
+
+		.perspective {
+			-webkit-perspective: 500px;
+		}
+
+			.perspective div {
+				width: 130px;
+				height: 130px;
+				background: blue;
+				-webkit-transform: rotateX(45deg);
+				float: left;
+				margin-right: 20px;
+			}
+
+		.no-perspective {
+			float: right;
+		}
+
+			.no-perspective div {
+				width: 130px;
+				height: 130px;
+				background: blue;
+				-webkit-transform: perspective(500px) rotateX(45deg);
+				float: left;
+				margin-right: 20px;
+			}
+
+		p {
+			padding: 20px;
+			font: 1.1em arial;
+		}
+
+	
+</style>
+
+</head>
+
+<body>
+
+	<div>
+
+		<div class="perspective">
+			<p><code>perspective: 500px;</code> on container</p>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+
+		<div class="no-perspective">
+			<p><code>perspective(500px)</code> on each transformed element</p>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+
+	</div>
+
+</body>
+</html>

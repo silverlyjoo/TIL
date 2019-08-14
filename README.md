@@ -2,15 +2,6 @@
 
 
 
-##### My first programming language : python
-
-##### I hope to be a good programmer
-
-
-
-
-
-
 
 ### What I Learned
 
@@ -32,7 +23,6 @@
 
 
 
-
 - framework
 
   > django, flask, Vue.js
@@ -42,6 +32,3 @@
 - algorithm
 
   > array, string, stack, queue, tree, graph
-
-
-- deep learning 

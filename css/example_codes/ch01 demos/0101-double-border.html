@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Fixing the Double Border with Last Child</title>
+
+<style type="text/css">
+
+	body {
+		margin: 0;
+		font: 90% Arial;
+	}
+
+	header {
+		display: block;
+		width: 100%;
+		float: left;
+		background: #222;
+		margin-bottom: 20px;
+	}
+
+		h1 {
+			font-size: 2em;
+			border-top: 1px dashed #444;
+			border-bottom: 1px dashed #444;
+			text-transform: uppercase;
+			margin: 40px 0 30px;
+			padding: 10px 0;
+			text-align: center;
+			color: #fff;
+		}
+
+	.container {
+		float: left;
+		width: 100%;
+	}
+
+		article {
+			display: block;
+			width: 700px;
+			margin: 0 auto;
+		}
+
+		    ul {
+		        background: #eee;
+		        color: #fff;
+		        width: 250px;
+		        margin: 0 auto;
+		        padding: 0;
+		        font: 1em Arial;
+		        border: 1px solid #000;
+		        list-style: none;
+		        padding: 3px;
+		    }
+
+			    ul li {
+			        padding: 10px;
+			        border-bottom: 1px solid #000;
+			    }
+
+				    ul li a {
+				    	text-decoration: none;
+				    	color: #666;
+				    }
+
+		    ul:last-child {
+		    	margin-top: 40px;
+		    }
+
+			    ul:last-child li:last-child {
+			    	border-bottom: none;
+			    }
+	
+</style>
+
+</head>
+
+<body>
+
+	<header>
+		<h1>Fixing the Double Border with Last Child</h1>
+	</header>
+
+	<div class="container">
+
+		<article>
+
+	        <ul>
+	            <li><a href="#">Home</a></li>
+	            <li><a href="#">About</a></li>
+	            <li><a href="#">Contact</a></li>
+	        </ul>
+
+	        <ul>
+	            <li><a href="#">Home</a></li>
+	            <li><a href="#">About</a></li>
+	            <li><a href="#">Contact</a></li>
+	        </ul>
+
+		</article>
+
+	</div>
+
+</body>
+</html>

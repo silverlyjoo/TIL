@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Animating Multiple Background Images</title>
+
+<style type="text/css">
+
+	body {
+		margin: 0;
+		font-size: 62.5%;
+	}
+
+		div {
+			width: 295px;
+			height: 295px;
+			border-radius: 50%;
+			text-align: center;
+			border: 5px solid #ccc;
+			background: url(images/cover-left.png) 0 -1px no-repeat,
+			            url(images/cover-right.png) right no-repeat,
+			            url(images/trees.jpg) 0 0 / cover;
+			margin: 160px auto;
+			box-shadow: 0 0 30px rgba(0, 0, 0, 0.2), 0 0 150px rgba(0, 0, 0, 0.1);
+			-webkit-transition: 1s;
+		}
+
+			p {
+				margin-top: 115px;
+				font: bold 0em Arial;
+				padding: 10px 0;
+				color: #333;
+				-webkit-transition: 0.5s;
+			}
+
+		div:hover {
+			background-position: -295px -100px, 295px 100px, 0 0;
+			-webkit-filter: sepia(0.8);
+		}
+
+			div:hover p {
+				font-size: 3em;
+				background: rgba(250, 250, 250, 0.5);
+				-webkit-transition: 1s 0.2s cubic-bezier(.2, .4, .4, 2);
+			}
+	
+</style>
+
+</head>
+
+<body>
+
+	<div>
+		<p>Trees</p>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Combining Rotation Functions to Form a Single Axis</title>
+
+<style type="text/css">
+
+	body > div {
+		width: 224px;
+		margin: 50px auto;
+		font: 1em arial;
+	}
+
+		.container {
+			width: 224px;
+			height: 313px;
+			margin-top: 30px;
+			-webkit-perspective: 700px;
+		}
+
+		.card {
+			margin: 0;
+			width: 224px;
+			height: 313px;
+			-webkit-transition: 2s;
+			-webkit-transform-style: preserve-3d;
+		}
+
+			.container:target .card {
+				-webkit-transform: rotate3d(1, 1, 0, 180deg);
+			}
+
+		.card img {
+			position: absolute;
+			-webkit-backface-visibility: hidden;
+		}
+
+		.card .front {
+			-webkit-transform: rotateY(180deg);
+		}
+
+		a {
+			padding: 10px;
+			background: #eee;
+			text-decoration: none;
+			border-radius: 5px;
+			color: #333;
+		}
+
+			a:hover {
+				background: #ddd;
+			}
+
+	
+</style>
+
+</head>
+
+<body>
+
+	<div>
+
+		<a href="#flip">Flip</a>
+		<a href="#reset">Reset</a>
+
+		<div class="container" id="flip">
+			<figure class="card">
+				<img class="back" src="back.jpg" alt="Back Face">
+				<img class="front" src="q-hearts.jpg" alt="Queen of Hearts">
+			</figure>
+		</div>
+
+		<p>The <code>rotate3d()</code> function combines the x and y values to create a single axis around which to rotate the card.</p>
+
+	</div>
+
+</body>
+</html>
