@@ -3,59 +3,48 @@ from pprint import pprint
 sys.stdin = open('village.txt')
 
 
-def findstart(N):
-    global vilcnt
-    for yi in range(N):
-        for xi in range(N):
-            if maps[yi][xi] == 1:
-                vilcnt += 1
-                return (yi, xi)
+def iswall(y, x, N):
+    if y >= N or y < 0: return True
+    if x >= N or x <0: return True
     return False
 
-def iswall(y, x, N):
-    if 0<= y < N or 0<= x < N:
-        return False
-    return True
-
-def dfs(st, N):
-    
-    global result, housecnt
-    sy, sx = st
-    housecnt += 1
-    print('hc', housecnt)
-    maps[sy][sx] = 0
+def bfs(st, N):
+    global housecnt
 
     dy = [0, 0, 1, -1]
     dx = [1, -1, 0, 0]
 
-    for idx in range(4):
-        ny, nx = sy + dy[idx], sx + dx[idx]
+    queue = [st]
 
-        if iswall(ny, nx, N) or maps[ny][nx] == 0:
-            continue
+    while queue:
+        sy, sx = queue.pop(0)
+        housecnt += 1
 
-        if maps[ny][nx] == 1:
-            dfs((ny, nx), N)
-    
+        for idx in range(4):
+            ny = sy + dy[idx]
+            nx = sx + dx[idx]
+
+            if iswall(ny, nx, N):
+                continue
+            if maps[ny][nx] == 0:
+                continue
+            maps[ny][nx] = 0
+            queue.append((ny, nx))
 
 N = int(input())
-
+housecnt = 0
 maps = [list(map(int, input())) for _ in range(N)]
 result = []
-vilcnt = 0
-housecnt = 0
 
-# pprint(maps)
+for y in range(N):
+    for x in range(N):
+        if maps[y][x] == 1:
+            maps[y][x] = 0
+            bfs((y, x), N)
+            result.append(housecnt)
+            housecnt = 0
+result.sort()
 
-a = findstart(N)
-
-while a:
-    dfs(a, N)
-    pprint(maps)
-    result.append(housecnt)
-    housecnt = 0
-    a = findstart(N)
-    print(vilcnt)
-
-print(vilcnt)
-print(result)
+print(len(result))
+for data in result:
+    print(data)
